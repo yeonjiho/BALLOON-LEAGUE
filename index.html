@@ -197,3 +197,77 @@
 <footer>© 2026 풍선리그 · BALLOON LEAGUE · OFFICIAL WEBSITE</footer>
 <script>window.addEventListener('load',()=>setTimeout(()=>document.body.classList.add('loaded'),800));menu.onclick=()=>document.querySelector('nav').classList.toggle('open');</script>
 </body></html>
+
+<!-- =========================================
+     BALLOON LEAGUE WELCOME POPUP
+========================================= -->
+
+<div id="welcomePopup" class="welcome-popup">
+  <div class="welcome-overlay"></div>
+
+  <div class="welcome-box">
+
+    <button class="welcome-close" id="welcomeClose">×</button>
+
+    <div class="welcome-balloon">🎈</div>
+
+    <div class="welcome-tag">OFFICIAL WEBSITE</div>
+
+    <h2>BALLOON LEAGUE</h2>
+
+    <h3>풍선리그에 오신 것을 환영합니다!</h3>
+
+    <p>
+      풍선리그 공식 홈페이지입니다.<br>
+      시즌 일정, 선수 기록, 경기 결과와<br>
+      최신 소식을 확인해보세요.
+    </p>
+
+    <button class="welcome-start" id="welcomeStart">
+      홈페이지 둘러보기
+      <span>→</span>
+    </button>
+
+    <label class="welcome-check">
+      <input type="checkbox" id="dontShowAgain">
+      다음부터 이 창을 보지 않기
+    </label>
+
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const popup = document.getElementById("welcomePopup");
+  const closeBtn = document.getElementById("welcomeClose");
+  const startBtn = document.getElementById("welcomeStart");
+  const checkbox = document.getElementById("dontShowAgain");
+
+  // 이미 닫은 사용자는 다시 표시하지 않음
+  if (localStorage.getItem("balloonWelcomeClosed") === "true") {
+    popup.classList.add("hidden");
+  }
+
+  function closeWelcome() {
+
+    if (checkbox.checked) {
+      localStorage.setItem("balloonWelcomeClosed", "true");
+    }
+
+    popup.classList.add("closing");
+
+    setTimeout(function () {
+      popup.classList.add("hidden");
+    }, 350);
+  }
+
+  closeBtn.addEventListener("click", closeWelcome);
+  startBtn.addEventListener("click", closeWelcome);
+
+  // 바깥쪽 클릭으로 닫기
+  document.querySelector(".welcome-overlay")
+    .addEventListener("click", closeWelcome);
+
+});
+</script>
