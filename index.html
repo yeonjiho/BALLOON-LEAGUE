@@ -1,56 +1,232 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="풍선리그 공식 웹사이트"><title>풍선리그 | BALLOON LEAGUE</title><link rel="stylesheet" href="style.css"></head><body>
-<div id="intro"><div class="introballoon">●</div><b>풍선리그</b><small>BALLOON LEAGUE</small><i></i></div>
-<header><a class="logo" href="#home">● 풍선리그 <small>BALLOON LEAGUE</small></a><nav><a href="#home">HOME</a><a href="#season">SEASON 7</a><a href="#records">RECORDS</a><a href="#rules">RULES</a><a href="#fouls">FOULS</a><a href="#history">HISTORY</a></nav><button id="menu">☰</button></header>
-<section id="home" class="hero"><div><p>OFFICIAL LEAGUE WEBSITE</p><h1>PLAY.<br><em>FLOAT.</em><br>WIN.</h1><h2>점심시간의 한 게임에서 시작된<br>우리만의 스포츠 리그.</h2><a class="btn" href="#season">SEASON 7 보기</a></div><div class="balloon">•</div><span class="scroll">SCROLL ↓</span></section>
-<div class="ticker">🎈 BALLOON LEAGUE　•　OFFICIAL　•　SEASON 7 CHAMPION: 준우　•　BALLOON LEAGUE　•　OFFICIAL　•　</div>
-<section id="season" class="dark"><label>01 / CURRENT SEASON</label><h2>SEASON <em>7</em></h2><div class="season"><div class="champ"><small>CHAMPION</small><strong>★</strong><b>준우</b><span>SEASON 7 WINNER · 1ST TITLE</span></div><div class="match"><small>SEASON 7 · Runner-up</small><b>지호</b><strong>Runner-up</strong><p>시즌 7 준우승</p></div></div></section>
-<section id="records"><label>02 / ALL-TIME</label><h2>CHAMPIONS</h2><div class="cards"><article><i>01</i><b>시은</b><strong>★★★</strong><p>시즌 1 · 3 · 6</p><small>3 TITLES</small></article><article><i>02</i><b>지호</b><strong>★★</strong><p>시즌 4 · 5</p><small>2 TITLES</small></article><article><i>03</i><b>서빈</b><strong>★</strong><p>시즌 2</p><small>1 TITLE</small></article><article class="new"><i>04</i><b>준우</b><strong>★</strong><p>시즌 7</p><small>1 TITLE</small></article></div></section>
-<section id="season7" class="section">
-  <div class="section-head">
-  <!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="풍선리그 공식 웹사이트">
+<title>풍선리그 | BALLOON LEAGUE</title>
+<link rel="stylesheet" href="style.css">
 
-<!-- index.html의 햄버거 메뉴 부분 -->
+<style>
+/* =========================
+   HAMBURGER MENU
+========================= */
 
-<button class="hamburger" id="hamburgerBtn" aria-label="메뉴 열기">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
+#menu {
+  display: block;
+  border: none;
+  background: none;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 10001;
+}
 
-<nav class="mobile-menu" id="mobileMenu">
-  <a href="index.html">HOME</a>
-  <a href="index.html#season7-players">SEASON 7</a>
-  <a href="index.html#season8">SEASON 8</a>
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background: #111;
+  color: #fff;
+  z-index: 10000;
+  padding: 80px 30px 30px;
+  box-sizing: border-box;
+  transition: right 0.35s ease;
+  box-shadow: -10px 0 30px rgba(0,0,0,.25);
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 18px 0;
+  border-bottom: 1px solid #333;
+}
+
+#menuClose {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+@media (min-width: 901px) {
+  #menu {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+  <div class="introballoon">●</div>
+  <b>풍선리그</b>
+  <small>BALLOON LEAGUE</small>
+  <i></i>
+</div>
+
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#home">
+    ● 풍선리그
+    <small>BALLOON LEAGUE</small>
+  </a>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#season">SEASON 7</a>
+    <a href="#records">RECORDS</a>
+    <a href="#rules">RULES</a>
+    <a href="#fouls">FOULS</a>
+    <a href="#history">HISTORY</a>
+  </nav>
+
+  <button id="menu" aria-label="메뉴 열기">☰</button>
+</header>
+
+<!-- HAMBURGER MENU -->
+<div class="mobile-menu" id="mobileMenu">
+
+  <button id="menuClose" aria-label="메뉴 닫기">×</button>
+
+  <a href="#home">HOME</a>
+  <a href="#season">SEASON 7</a>
+  <a href="#records">RECORDS</a>
+
+  <!-- 역대 순위 페이지 -->
   <a href="rankings.html">🏆 역대 순위</a>
-  <a href="index.html#rules">RULES</a>
-  <a href="index.html#history">HISTORY</a>
-</nav>
 
-<script>
-const hamburgerBtn = document.getElementById("hamburgerBtn");
-const mobileMenu = document.getElementById("mobileMenu");
+  <a href="#rules">RULES</a>
+  <a href="#fouls">FOULS</a>
+  <a href="#history">HISTORY</a>
 
-hamburgerBtn.addEventListener("click", () => {
-  hamburgerBtn.classList.toggle("active");
-  mobileMenu.classList.toggle("active");
-});
+</div>
 
-document.querySelectorAll(".mobile-menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    hamburgerBtn.classList.remove("active");
-    mobileMenu.classList.remove("active");
-  });
-});
-</script>
+<!-- HOME -->
+<section id="home" class="hero">
+  <div>
+    <p>OFFICIAL LEAGUE WEBSITE</p>
 
-</body>
-</html>
+    <h1>
+      PLAY.<br>
+      <em>FLOAT.</em><br>
+      WIN.
+    </h1>
+
+    <h2>
+      점심시간의 한 게임에서 시작된<br>
+      우리만의 스포츠 리그.
+    </h2>
+
+    <a class="btn" href="#season">SEASON 7 보기</a>
+  </div>
+
+  <div class="balloon">•</div>
+
+  <span class="scroll">SCROLL ↓</span>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  🎈 BALLOON LEAGUE　•　OFFICIAL　•　SEASON 7 CHAMPION: 준우　•　
+  BALLOON LEAGUE　•　OFFICIAL　•
+</div>
+
+<!-- SEASON 7 -->
+<section id="season" class="dark">
+
+  <label>01 / CURRENT SEASON</label>
+
+  <h2>
+    SEASON <em>7</em>
+  </h2>
+
+  <div class="season">
+
+    <div class="champ">
+      <small>CHAMPION</small>
+      <strong>★</strong>
+      <b>준우</b>
+      <span>SEASON 7 WINNER · 1ST TITLE</span>
+    </div>
+
+    <div class="match">
+      <small>SEASON 7 · Runner-up</small>
+      <b>지호</b>
+      <strong>Runner-up</strong>
+      <p>시즌 7 준우승</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- RECORDS -->
+<section id="records">
+
+  <label>02 / ALL-TIME</label>
+
+  <h2>CHAMPIONS</h2>
+
+  <div class="cards">
+
+    <article>
+      <i>01</i>
+      <b>시은</b>
+      <strong>★★★</strong>
+      <p>시즌 1 · 3 · 6</p>
+      <small>3 TITLES</small>
+    </article>
+
+    <article>
+      <i>02</i>
+      <b>지호</b>
+      <strong>★★</strong>
+      <p>시즌 4 · 5</p>
+      <small>2 TITLES</small>
+    </article>
+
+    <article>
+      <i>03</i>
+      <b>서빈</b>
+      <strong>★</strong>
+      <p>시즌 2</p>
+      <small>1 TITLE</small>
+    </article>
+
+    <article class="new">
+      <i>04</i>
+      <b>준우</b>
+      <strong>★</strong>
+      <p>시즌 7</p>
+      <small>1 TITLE</small>
+    </article>
+
+  </div>
+
+</section>
+
 <!-- SEASON 7 PLAYERS -->
 <section id="season7-players" class="section">
+
   <div class="section-head">
     <span>SEASON 7</span>
     <h2>시즌 7 참가선수</h2>
@@ -58,6 +234,7 @@ document.querySelectorAll(".mobile-menu a").forEach(link => {
   </div>
 
   <div class="s7-player-grid">
+
     <div class="s7-player-card">
       <span>01</span>
       <div>
@@ -113,12 +290,14 @@ document.querySelectorAll(".mobile-menu a").forEach(link => {
         <strong>혜영</strong>
       </div>
     </div>
+
   </div>
+
 </section>
 
-
-<!-- SEASON 8 SCHEDULE -->
+<!-- SEASON 8 -->
 <section id="season8" class="section season8-section">
+
   <div class="section-head">
     <span>SEASON 8</span>
     <h2>시즌 8 일정</h2>
@@ -132,88 +311,120 @@ document.querySelectorAll(".mobile-menu a").forEach(link => {
         <small>SEASON 8</small>
         <h3>7강전</h3>
       </div>
-      <div class="tournament-status">SCHEDULE</div>
+
+      <div class="tournament-status">
+        SCHEDULE
+      </div>
     </div>
 
     <div class="bracket">
 
       <div class="bracket-column">
-        <div class="bracket-label">MATCH 01</div>
+
+        <div class="bracket-label">
+          MATCH 01
+        </div>
 
         <div class="bracket-match">
+
           <div class="bracket-player">
             <span>01</span>
             <strong>준우</strong>
           </div>
 
-          <div class="bracket-vs">VS</div>
+          <div class="bracket-vs">
+            VS
+          </div>
 
           <div class="bracket-player">
             <span>07</span>
             <strong>혜영</strong>
           </div>
+
         </div>
+
       </div>
 
-
       <div class="bracket-column">
-        <div class="bracket-label">MATCH 02</div>
+
+        <div class="bracket-label">
+          MATCH 02
+        </div>
 
         <div class="bracket-match">
+
           <div class="bracket-player">
             <span>02</span>
             <strong>지호</strong>
           </div>
 
-          <div class="bracket-vs">VS</div>
+          <div class="bracket-vs">
+            VS
+          </div>
 
           <div class="bracket-player">
             <span>06</span>
             <strong>서빈</strong>
           </div>
+
         </div>
+
       </div>
 
-
       <div class="bracket-column">
-        <div class="bracket-label">MATCH 03</div>
+
+        <div class="bracket-label">
+          MATCH 03
+        </div>
 
         <div class="bracket-match">
+
           <div class="bracket-player">
             <span>03</span>
             <strong>시원</strong>
           </div>
 
-          <div class="bracket-vs">VS</div>
+          <div class="bracket-vs">
+            VS
+          </div>
 
           <div class="bracket-player">
             <span>05</span>
             <strong>민성</strong>
           </div>
+
         </div>
+
       </div>
 
-
       <div class="bracket-column bye-match">
-        <div class="bracket-label">MATCH 04</div>
+
+        <div class="bracket-label">
+          MATCH 04
+        </div>
 
         <div class="bracket-match">
+
           <div class="bracket-player">
             <span>04</span>
             <strong>민준</strong>
           </div>
 
-          <div class="bye-arrow">→</div>
+          <div class="bye-arrow">
+            →
+          </div>
 
           <div class="bracket-player bye-player">
             <span>BYE</span>
             <strong>부전승</strong>
           </div>
+
         </div>
 
         <p class="bye-note">
           상대 선수가 없을 경우 부전승
         </p>
+
       </div>
 
     </div>
@@ -224,36 +435,190 @@ document.querySelectorAll(".mobile-menu a").forEach(link => {
     </div>
 
   </div>
+
 </section>
-<section id="rules" class="rules"><label>03 / HOW TO PLAY</label><h2>RULES</h2><div class="rulegrid"><article><b>01</b><h3>3 TOUCHES</h3><p>상대 구역으로 넘기기 전 최대 3번 터치.</p></article><article><b>02</b><h3>NO FLOOR</h3><p>풍선이 바닥에 떨어지면 상대에게 1점.</p></article><article><b>03</b><h3>OUT</h3><p>경기장 밖으로 나가면 상대에게 1점.</p></article><article><b>04</b><h3>FIRST TO 5</h3><p>먼저 5점을 얻은 선수가 승리.</p></article></div></section>
-<section id="fouls" class="rules"><label>04 / FOUL & WARNING</label><h2>FOULS & WARNINGS</h2>
-<div class="fwgrid">
-<div><h3>🚨 파울 규칙</h3><article><b>01</b><p>신체부위 일부가 상대팀 영역으로 나갈 때.</p></article><article><b>02</b><p>서브 시, 풍선이 경기장 밖으로 나갈 때.</p></article><article><b>03</b><p>심판에게 항의하는 경우.</p></article></div>
-<div><h3>📋 경고 규칙</h3><article><b>01</b><p>경기시간을 지연할 경우.</p></article><article><b>02</b><p>상대팀에게 도발할 경우.</p></article><article><b>03</b><p>서브를 이상하게 할 경우.</p></article></div>
-</div></section>
-<section id="history" class="dark"><label>05 / SINCE 2026</label><h2>HISTORY</h2><div class="timeline"><p><b>2026.06</b> 비공식 경기 시작</p><p><b>2026.09.08</b> 정식 창단</p><p><b>SEASON 01</b> 시은 우승</p><p><b>SEASON 02</b> 서빈 우승</p><p><b>SEASON 03</b> 시은 우승</p><p><b>SEASON 04</b> 지호 우승</p><p><b>SEASON 05</b> 지호 우승 </p><p><b>2026.9.12 ~ 2026.9.15</b> 임시 중단</p><p><b>SEASON 06</b> 시은 우승</p><p><b>SEASON 07</b>준우 우승</p></div></section>
-<footer>© 2026 풍선리그 · BALLOON LEAGUE · OFFICIAL WEBSITE</footer>
-<script>window.addEventListener('load',()=>setTimeout(()=>document.body.classList.add('loaded'),800));menu.onclick=()=>document.querySelector('nav').classList.toggle('open');</script>
-</body></html>
 
-<!-- =========================================
-     BALLOON LEAGUE WELCOME POPUP
-========================================= -->
+<!-- RULES -->
+<section id="rules" class="rules">
 
+  <label>03 / HOW TO PLAY</label>
+
+  <h2>RULES</h2>
+
+  <div class="rulegrid">
+
+    <article>
+      <b>01</b>
+      <h3>3 TOUCHES</h3>
+      <p>상대 구역으로 넘기기 전 최대 3번 터치.</p>
+    </article>
+
+    <article>
+      <b>02</b>
+      <h3>NO FLOOR</h3>
+      <p>풍선이 바닥에 떨어지면 상대에게 1점.</p>
+    </article>
+
+    <article>
+      <b>03</b>
+      <h3>OUT</h3>
+      <p>경기장 밖으로 나가면 상대에게 1점.</p>
+    </article>
+
+    <article>
+      <b>04</b>
+      <h3>FIRST TO 5</h3>
+      <p>먼저 5점을 얻은 선수가 승리.</p>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- FOULS -->
+<section id="fouls" class="rules">
+
+  <label>04 / FOUL & WARNING</label>
+
+  <h2>FOULS & WARNINGS</h2>
+
+  <div class="fwgrid">
+
+    <div>
+
+      <h3>🚨 파울 규칙</h3>
+
+      <article>
+        <b>01</b>
+        <p>신체부위 일부가 상대팀 영역으로 나갈 때.</p>
+      </article>
+
+      <article>
+        <b>02</b>
+        <p>서브 시, 풍선이 경기장 밖으로 나갈 때.</p>
+      </article>
+
+      <article>
+        <b>03</b>
+        <p>심판에게 항의하는 경우.</p>
+      </article>
+
+    </div>
+
+    <div>
+
+      <h3>📋 경고 규칙</h3>
+
+      <article>
+        <b>01</b>
+        <p>경기시간을 지연할 경우.</p>
+      </article>
+
+      <article>
+        <b>02</b>
+        <p>상대팀에게 도발할 경우.</p>
+      </article>
+
+      <article>
+        <b>03</b>
+        <p>서브를 이상하게 할 경우.</p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- HISTORY -->
+<section id="history" class="dark">
+
+  <label>05 / SINCE 2026</label>
+
+  <h2>HISTORY</h2>
+
+  <div class="timeline">
+
+    <p>
+      <b>2026.06</b>
+      비공식 경기 시작
+    </p>
+
+    <p>
+      <b>2026.09.08</b>
+      정식 창단
+    </p>
+
+    <p>
+      <b>SEASON 01</b>
+      시은 우승
+    </p>
+
+    <p>
+      <b>SEASON 02</b>
+      서빈 우승
+    </p>
+
+    <p>
+      <b>SEASON 03</b>
+      시은 우승
+    </p>
+
+    <p>
+      <b>SEASON 04</b>
+      지호 우승
+    </p>
+
+    <p>
+      <b>SEASON 05</b>
+      지호 우승
+    </p>
+
+    <p>
+      <b>2026.9.12 ~ 2026.9.15</b>
+      임시 중단
+    </p>
+
+    <p>
+      <b>SEASON 06</b>
+      시은 우승
+    </p>
+
+    <p>
+      <b>SEASON 07</b>
+      준우 우승
+    </p>
+
+  </div>
+
+</section>
+
+<!-- WELCOME POPUP -->
 <div id="welcomePopup" class="welcome-popup">
+
   <div class="welcome-overlay"></div>
 
   <div class="welcome-box">
 
-    <button class="welcome-close" id="welcomeClose">×</button>
+    <button class="welcome-close" id="welcomeClose">
+      ×
+    </button>
 
-    <div class="welcome-balloon">🎈</div>
+    <div class="welcome-balloon">
+      🎈
+    </div>
 
-    <div class="welcome-tag">OFFICIAL WEBSITE</div>
+    <div class="welcome-tag">
+      OFFICIAL WEBSITE
+    </div>
 
-    <h2>BALLOON LEAGUE</h2>
+    <h2>
+      BALLOON LEAGUE
+    </h2>
 
-    <h3>풍선리그에 오신 것을 환영합니다!</h3>
+    <h3>
+      풍선리그에 오신 것을 환영합니다!
+    </h3>
 
     <p>
       풍선리그 공식 홈페이지입니다.<br>
@@ -272,9 +637,50 @@ document.querySelectorAll(".mobile-menu a").forEach(link => {
     </label>
 
   </div>
+
 </div>
 
+<footer>
+  © 2026 풍선리그 · BALLOON LEAGUE · OFFICIAL WEBSITE
+</footer>
+
 <script>
+
+/* INTRO */
+window.addEventListener('load', () => {
+
+  setTimeout(() => {
+    document.body.classList.add('loaded');
+  }, 800);
+
+});
+
+
+/* HAMBURGER MENU */
+
+const menu = document.getElementById('menu');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuClose = document.getElementById('menuClose');
+
+menu.addEventListener('click', () => {
+  mobileMenu.classList.add('open');
+});
+
+menuClose.addEventListener('click', () => {
+  mobileMenu.classList.remove('open');
+});
+
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+  });
+
+});
+
+
+/* WELCOME POPUP */
+
 document.addEventListener("DOMContentLoaded", function () {
 
   const popup = document.getElementById("welcomePopup");
@@ -282,7 +688,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const startBtn = document.getElementById("welcomeStart");
   const checkbox = document.getElementById("dontShowAgain");
 
-  // 이미 닫은 사용자는 다시 표시하지 않음
   if (localStorage.getItem("balloonWelcomeClosed") === "true") {
     popup.classList.add("hidden");
   }
@@ -290,7 +695,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function closeWelcome() {
 
     if (checkbox.checked) {
-      localStorage.setItem("balloonWelcomeClosed", "true");
+      localStorage.setItem(
+        "balloonWelcomeClosed",
+        "true"
+      );
     }
 
     popup.classList.add("closing");
@@ -298,14 +706,29 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
       popup.classList.add("hidden");
     }, 350);
+
   }
 
-  closeBtn.addEventListener("click", closeWelcome);
-  startBtn.addEventListener("click", closeWelcome);
+  closeBtn.addEventListener(
+    "click",
+    closeWelcome
+  );
 
-  // 바깥쪽 클릭으로 닫기
-  document.querySelector(".welcome-overlay")
-    .addEventListener("click", closeWelcome);
+  startBtn.addEventListener(
+    "click",
+    closeWelcome
+  );
+
+  document
+    .querySelector(".welcome-overlay")
+    .addEventListener(
+      "click",
+      closeWelcome
+    );
 
 });
+
 </script>
+
+</body>
+</html>
