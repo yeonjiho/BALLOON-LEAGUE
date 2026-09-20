@@ -7,6 +7,173 @@
 <title>풍선리그 | BALLOON LEAGUE</title>
 <link rel="stylesheet" href="style.css">
 
+<!-- 시즌 8 카운트다운 풍선 -->
+<div class="season8-balloon">
+    <div class="balloon-string"></div>
+
+    <div class="balloon">
+        <div class="balloon-content">
+            <div class="balloon-title">SEASON 8</div>
+            <div class="balloon-subtitle">개막까지</div>
+
+            <div id="season8-countdown">
+                <span id="days">00</span>
+                <small>일</small>
+                <span id="hours">00</span>
+                <small>시간</small>
+                <span id="minutes">00</span>
+                <small>분</small>
+                <span id="seconds">00</span>
+                <small>초</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.season8-balloon {
+    position: fixed;
+    right: 35px;
+    top: 180px;
+    z-index: 999;
+    animation: floatBalloon 3s ease-in-out infinite;
+}
+
+.balloon {
+    width: 210px;
+    height: 250px;
+    background: #ffffff;
+    border: 5px solid #111111;
+    border-radius: 50% 50% 48% 48%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-top: 22px solid #111111;
+}
+
+.balloon-content {
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+}
+
+.balloon-title {
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.balloon-subtitle {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#season8-countdown {
+    margin-top: 18px;
+    line-height: 1.6;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+#season8-countdown span {
+    font-size: 25px;
+}
+
+#season8-countdown small {
+    font-size: 11px;
+    margin-right: 4px;
+}
+
+.balloon-string {
+    position: absolute;
+    top: 430px;
+    right: 135px;
+    width: 2px;
+    height: 100px;
+    background: #111111;
+    transform: rotate(-4deg);
+}
+
+@keyframes floatBalloon {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* 모바일 */
+@media (max-width: 600px) {
+    .season8-balloon {
+        right: 12px;
+        top: 130px;
+        transform: scale(0.75);
+        transform-origin: top right;
+    }
+}
+</style>
+
+<script>
+const season8Start = new Date("2026-09-21T13:10:00+09:00").getTime();
+
+function updateSeason8Countdown() {
+    const now = Date.now();
+    const distance = season8Start - now;
+
+    if (distance <= 0) {
+        document.getElementById("season8-countdown").innerHTML =
+            "🎈 SEASON 8<br>개막!";
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+    );
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) /
+        (1000 * 60)
+    );
+    const seconds = Math.floor(
+        (distance % (1000 * 60)) /
+        1000
+    );
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+}
+
+updateSeason8Countdown();
+setInterval(updateSeason8Countdown, 1000);
+</script>
+   
 <style>
 /* =========================
    HAMBURGER MENU
