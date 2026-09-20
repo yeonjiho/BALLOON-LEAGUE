@@ -1,1 +1,245 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,"Noto Sans KR",sans-serif;background:#f3f3f1;color:#111}#intro{position:fixed;inset:0;background:#09090a;color:#fff;z-index:99;display:grid;place-content:center;text-align:center;transition:.7s}body.loaded #intro{opacity:0;visibility:hidden}.introballoon{font-size:60px;color:#d7192e;animation:pulse 1s infinite}#intro b{font-size:34px}#intro small{letter-spacing:5px;color:#888}#intro i{width:120px;height:2px;background:#d7192e;display:block;margin:25px auto;animation:load 1s infinite}@keyframes pulse{50%{transform:scale(1.2)}}@keyframes load{from{transform:translateX(-50px)}to{transform:translateX(50px)}}header{height:70px;position:sticky;top:0;z-index:20;background:#fffddf0;backdrop-filter:blur(12px);border-bottom:1px solid #ddd;display:flex;align-items:center;justify-content:space-between;padding:0 6%}.logo{font-weight:900;color:#111;text-decoration:none}.logo:first-letter{color:#d7192e}.logo small{display:block;margin-left:18px;font-size:8px;letter-spacing:2px;color:#888}nav{display:flex;gap:25px}nav a{font-size:10px;font-weight:900;color:#222;text-decoration:none;letter-spacing:1px}#menu{display:none;border:0;background:none;font-size:22px}.hero{min-height:650px;background:#09090a;color:#fff;display:flex;align-items:center;padding:80px 9%;position:relative;overflow:hidden}.hero>div:first-child{z-index:2}.hero p,label{font-size:9px;letter-spacing:4px;color:#999}.hero h1{font-size:clamp(60px,10vw,120px);line-height:.8;letter-spacing:-6px;margin:25px 0}.hero h1 em,.dark em{font-style:normal;color:#d7192e}.hero h2{font-size:17px;line-height:1.7;color:#aaa;font-weight:400}.btn{display:inline-block;margin-top:25px;padding:15px 20px;background:#d7192e;color:#fff;text-decoration:none;font-weight:900;font-size:11px}.balloon{position:absolute;right:15%;width:190px;height:240px;border-radius:50%;background:#eee;color:#111;display:grid;place-content:center;font-size:20px;box-shadow:inset -25px -25px 50px #aaa,0 25px 80px #000;animation:float 3s ease-in-out infinite}@keyframes float{50%{transform:translateY(-25px) rotate(2deg)}}.scroll{position:absolute;bottom:20px;font-size:9px;letter-spacing:3px;color:#777}.ticker{white-space:nowrap;overflow:hidden;background:#d7192e;color:#fff;font-weight:900;font-size:11px;padding:12px}.ticker{animation:marquee 18s linear infinite}@keyframes marquee{50%{text-indent:-35%}}section{padding:85px 8%;max-width:1200px;margin:auto}section.dark{max-width:none;background:#09090a;color:#fff}.season{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:1000px;margin:auto}.champ{padding:40px;border:1px solid #333;background:linear-gradient(145deg,#151516,#0b0b0c)}.champ small{display:block;color:#999;letter-spacing:3px}.champ strong{display:block;color:#d7192e;font-size:70px;margin:25px 0}.champ b{display:block;font-size:55px}.champ span{display:block;color:#999;font-size:10px;margin-top:8px}.match{background:#fff;color:#111;padding:35px}.match small{color:#999;letter-spacing:2px}.match b{display:block;font-size:45px;margin:45px 0 10px}.match strong{background:#111;color:#fff;padding:8px;font-size:10px}.match p{color:#777}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.cards article{background:#fff;border:1px solid #ddd;padding:25px;transition:.25s}.cards article:hover{transform:translateY(-8px);box-shadow:0 15px 35px #0002}.cards .new{border-top:4px solid #d7192e}.cards i{display:block;color:#aaa;font-size:9px}.cards b{display:block;font-size:30px;margin:35px 0 5px}.cards strong{display:block;color:#d7192e;letter-spacing:3px}.cards p{font-size:11px;color:#777}.cards small{font-size:9px;letter-spacing:2px}.rules{background:#eee;max-width:none}.rulegrid{display:grid;grid-template-columns:repeat(4,1fr);max-width:1050px;margin:auto}.rulegrid article{padding:25px;border-top:1px solid #bbb;border-left:1px solid #bbb}.rulegrid b{color:#d7192e}.rulegrid h3{font-size:18px}.rulegrid p{font-size:11px;color:#666;line-height:1.6}.timeline{max-width:800px;border-left:1px solid #444;margin:auto}.timeline p{padding:0 0 25px 28px;margin:0;color:#aaa}.timeline b{display:block;color:#fff;font-size:20px;margin-bottom:5px}footer{background:#111;color:#777;text-align:center;padding:30px;font-size:10px;letter-spacing:1px}@media(max-width:700px){nav{display:none}nav.open{display:flex;position:absolute;top:70px;left:0;right:0;background:#fff;padding:25px;flex-direction:column}#menu{display:block}.hero{min-height:600px}.balloon{right:-60px;opacity:.3}.season,.cards,.rulegrid{grid-template-columns:1fr 1fr}}@media(max-width:480px){.season,.cards,.rulegrid{grid-template-columns:1fr}.hero h1{letter-spacing:-4px}}\n.fwgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1050px;margin:auto}.fwgrid>div{background:#fff;border:1px solid #ddd;padding:28px}.fwgrid h3{margin-top:0;font-size:22px}.fwgrid article{display:flex;gap:18px;border-top:1px solid #ddd;padding:18px 0}.fwgrid article b{color:#d7192e;font-size:12px}.fwgrid article p{margin:0;font-size:12px;color:#555;line-height:1.6}@media(max-width:700px){.fwgrid{grid-template-columns:1fr}}\n
+/* =========================
+   SEASON 7 PLAYERS
+========================= */
+
+.s7-player-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 35px;
+}
+
+.s7-player-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 24px;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 18px;
+  background: rgba(255,255,255,.8);
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  transition: .3s ease;
+  overflow: hidden;
+}
+
+.s7-player-card::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  right: -25px;
+  top: -25px;
+  border-radius: 50%;
+  background: rgba(220,0,0,.06);
+}
+
+.s7-player-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0,0,0,.1);
+}
+
+.s7-player-card > span {
+  font-size: 13px;
+  font-weight: 800;
+  color: #d00000;
+  letter-spacing: 1px;
+}
+
+.s7-player-card small {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  opacity: .45;
+}
+
+.s7-player-card strong {
+  font-size: 22px;
+}
+
+
+/* =========================
+   SEASON 8 TOURNAMENT
+========================= */
+
+.season8-section {
+  position: relative;
+}
+
+.tournament-box {
+  margin-top: 35px;
+  padding: 30px;
+  border-radius: 24px;
+  background: #111;
+  color: #fff;
+  box-shadow: 0 20px 50px rgba(0,0,0,.18);
+}
+
+.tournament-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.tournament-header small {
+  font-size: 10px;
+  letter-spacing: 3px;
+  opacity: .5;
+}
+
+.tournament-header h3 {
+  margin: 5px 0 0;
+  font-size: 30px;
+}
+
+.tournament-status {
+  padding: 8px 14px;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 30px;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+
+/* 대진 */
+
+.bracket {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.bracket-column {
+  position: relative;
+}
+
+.bracket-label {
+  margin-bottom: 10px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  opacity: .45;
+}
+
+.bracket-match {
+  min-height: 170px;
+  padding: 15px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px;
+  background: rgba(255,255,255,.045);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.bracket-player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.07);
+  transition: .25s ease;
+}
+
+.bracket-player:hover {
+  background: rgba(255,255,255,.13);
+}
+
+.bracket-player span {
+  font-size: 9px;
+  opacity: .4;
+  letter-spacing: 1px;
+}
+
+.bracket-player strong {
+  font-size: 17px;
+}
+
+.bracket-vs {
+  text-align: center;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  opacity: .4;
+}
+
+.bye-arrow {
+  text-align: center;
+  font-size: 20px;
+  opacity: .5;
+}
+
+.bye-player {
+  border: 1px dashed rgba(255,255,255,.2);
+}
+
+.bye-player strong {
+  color: #fff;
+}
+
+.bye-note {
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.5;
+  color: rgba(255,255,255,.45);
+}
+
+.schedule-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  font-size: 11px;
+  color: rgba(255,255,255,.45);
+}
+
+.schedule-note span {
+  color: #e00000;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+  .s7-player-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bracket {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .s7-player-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tournament-box {
+    padding: 20px;
+  }
+
+  .bracket {
+    grid-template-columns: 1fr;
+  }
+
+  .tournament-header h3 {
+    font-size: 24px;
+  }
+
+}
