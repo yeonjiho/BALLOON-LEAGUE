@@ -13,6 +13,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- index.html의 햄버거 메뉴 부분 -->
+
+<button class="hamburger" id="hamburgerBtn" aria-label="메뉴 열기">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="index.html">HOME</a>
+  <a href="index.html#season7-players">SEASON 7</a>
+  <a href="index.html#season8">SEASON 8</a>
+  <a href="rankings.html">🏆 역대 순위</a>
+  <a href="index.html#rules">RULES</a>
+  <a href="index.html#history">HISTORY</a>
+</nav>
+
+<script>
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburgerBtn.addEventListener("click", () => {
+  hamburgerBtn.classList.toggle("active");
+  mobileMenu.classList.toggle("active");
+});
+
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    hamburgerBtn.classList.remove("active");
+    mobileMenu.classList.remove("active");
+  });
+});
+</script>
 
 </body>
 </html>
