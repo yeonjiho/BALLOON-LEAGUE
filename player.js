@@ -2,7 +2,7 @@ const players = {
 
   "시은": {
     number: "PLAYER 01",
-    rank: "1위",
+    last_rank: "1위",
     wins: "3회",
     finals: "3회",
     seasons: "6",
@@ -12,7 +12,7 @@ const players = {
 
   "지호": {
     number: "PLAYER 02",
-    rank: "1위",
+    last_rank: "1위",
     wins: "2회",
     finals: "3회",
     seasons: "7",
@@ -22,7 +22,7 @@ const players = {
 
   "서한": {
     number: "PLAYER 03",
-    rank: "2위",
+    last_rank: "2위",
     wins: "0회",
     finals: "0회",
     seasons: "5",
@@ -32,7 +32,7 @@ const players = {
 
   "민준": {
     number: "PLAYER 04",
-    rank: "2위",
+    last_rank: "2위",
     wins: "0회",
     finals: "0회",
     seasons: "7",
@@ -42,7 +42,7 @@ const players = {
 
   "민성": {
     number: "PLAYER 05",
-    rank: "3위",
+    last_rank: "3위",
     wins: "0회",
     finals: "0회",
     seasons: "7",
@@ -52,7 +52,7 @@ const players = {
 
   "서빈": {
     number: "PLAYER 06",
-    rank: "1위",
+    last_rank: "1위",
     wins: "1회",
     finals: "1회",
     seasons: "5",
@@ -62,7 +62,7 @@ const players = {
 
   "시원": {
     number: "PLAYER 07",
-    rank: "3위",
+    last_rank: "3위",
     wins: "0회",
     finals: "0회",
     seasons: "6",
@@ -72,7 +72,7 @@ const players = {
 
   "준우": {
     number: "PLAYER 08",
-    rank: "1위",
+    last_rank: "1위",
     wins: "1회",
     finals: "1회",
     seasons: "5",
@@ -82,7 +82,7 @@ const players = {
 
   "혜영": {
     number: "PLAYER 09",
-    rank: "5위",
+    last_rank: "5위",
     wins: "0회",
     finals: "0회",
     seasons: "5",
