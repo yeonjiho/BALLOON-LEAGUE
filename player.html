@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>선수 페이지 | 풍선리그</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .player-page{
+      min-height:100vh;
+      background:#09090a;
+      color:#fff;
+      padding:100px 8% 80px;
+    }
+
+    .player-top{
+      max-width:900px;
+      margin:auto;
+    }
+
+    .player-label{
+      font-size:10px;
+      letter-spacing:4px;
+      color:#999;
+      margin-bottom:15px;
+    }
+
+    .player-title{
+      font-size:clamp(45px,8vw,85px);
+      line-height:.9;
+      letter-spacing:-4px;
+      margin:0 0 40px;
+    }
+
+    .player-title em{
+      color:#d7192e;
+      font-style:normal;
+    }
+
+    .player-search{
+      display:flex;
+      gap:10px;
+      max-width:600px;
+      margin-bottom:45px;
+    }
+
+    .player-search input{
+      flex:1;
+      min-width:0;
+      padding:17px 18px;
+      border:1px solid #444;
+      background:#151516;
+      color:#fff;
+      font-size:16px;
+      outline:none;
+    }
+
+    .player-search input:focus{
+      border-color:#d7192e;
+    }
+
+    .player-search button{
+      border:0;
+      background:#d7192e;
+      color:#fff;
+      padding:0 25px;
+      font-weight:900;
+      cursor:pointer;
+    }
+
+    .player-error{
+      color:#d7192e;
+      font-size:13px;
+      margin:15px 0;
+      display:none;
+    }
+
+    .profile{
+      display:none;
+      max-width:900px;
+      animation:profileIn .35s ease;
+    }
+
+    @keyframes profileIn{
+      from{
+        opacity:0;
+        transform:translateY(15px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .profile-header{
+      border-top:1px solid #333;
+      border-bottom:1px solid #333;
+      padding:35px 0;
+      margin-bottom:20px;
+    }
+
+    .profile-status{
+      display:inline-block;
+      background:#d7192e;
+      padding:7px 10px;
+      font-size:9px;
+      font-weight:900;
+      letter-spacing:2px;
+      margin-bottom:15px;
+    }
+
+    .profile-name{
+      font-size:clamp(45px,7vw,80px);
+      margin:0;
+      letter-spacing:-4px;
+    }
+
+    .profile-number{
+      color:#777;
+      font-size:11px;
+      margin-top:10px;
+    }
+
+    .profile-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-bottom:30px;
+    }
+
+    .stat{
+      background:#151516;
+      border:1px solid #292929;
+      padding:25px 18px;
+    }
+
+    .stat small{
+      display:block;
+      color:#888;
+      font-size:9px;
+      letter-spacing:2px;
+      margin-bottom:15px;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:32px;
+    }
+
+    .profile-section{
+      background:#151516;
+      border:1px solid #292929;
+      padding:30px;
+      margin-bottom:15px;
+    }
+
+    .profile-section h2{
+      font-size:12px;
+      letter-spacing:3px;
+      margin:0 0 20px;
+      color:#aaa;
+    }
+
+    .profile-section p{
+      color:#ddd;
+      line-height:1.8;
+      font-size:13px;
+      margin:5px 0;
+    }
+
+    .season-badge{
+      display:inline-block;
+      border:1px solid #444;
+      padding:8px 12px;
+      margin:4px;
+      font-size:11px;
+    }
+
+    .home-button{
+      display:inline-block;
+      margin-top:30px;
+      padding:15px 22px;
+      background:#fff;
+      color:#111;
+      text-decoration:none;
+      font-size:11px;
+      font-weight:900;
+    }
+
+    @media(max-width:600px){
+      .player-page{
+        padding:70px 20px 50px;
+      }
+
+      .player-search{
+        flex-direction:column;
+      }
+
+      .player-search button{
+        padding:15px;
+      }
+
+      .profile-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .profile-section{
+        padding:22px;
+      }
+    }
+
+    @media(max-width:380px){
+      .profile-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="player-page">
+
+    <div class="player-top">
+
+      <div class="player-label">BALLOON LEAGUE</div>
+
+      <h1 class="player-title">
+        PLAYER<br>
+        <em>PROFILE.</em>
+      </h1>
+
+      <div class="player-search">
+        <input
+          id="playerInput"
+          type="text"
+          placeholder="선수 이름을 입력하세요"
+          autocomplete="off"
+        >
+
+        <button id="searchButton" type="button">
+          SEARCH
+        </button>
+      </div>
+
+      <div id="playerError" class="player-error">
+        등록된 선수를 찾을 수 없습니다.
+      </div>
+
+      <section id="profile" class="profile">
+
+        <div class="profile-header">
+
+          <div class="profile-status">
+            REGISTERED PLAYER
+          </div>
+
+          <h2 id="profileName" class="profile-name"></h2>
+
+          <div id="profileNumber" class="profile-number"></div>
+
+        </div>
+
+        <div class="profile-grid">
+
+          <div class="stat">
+            <small>RANK</small>
+            <strong id="rank"></strong>
+          </div>
+
+          <div class="stat">
+            <small>WINS</small>
+            <strong id="wins"></strong>
+          </div>
+
+          <div class="stat">
+            <small>FINALS</small>
+            <strong id="finals"></strong>
+          </div>
+
+          <div class="stat">
+            <small>SEASONS</small>
+            <strong id="seasons"></strong>
+          </div>
+
+        </div>
+
+        <div class="profile-section">
+
+          <h2>CHAMPIONSHIP</h2>
+
+          <p id="championship"></p>
+
+        </div>
+
+        <div class="profile-section">
+
+          <h2>PARTICIPATED SEASONS</h2>
+
+          <div id="seasonList"></div>
+
+        </div>
+
+        <a href="index.html" class="home-button">
+          ← HOME
+        </a>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <script src="player.js"></script>
+
+</body>
+</html>
