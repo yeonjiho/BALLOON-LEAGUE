@@ -243,3 +243,247 @@
   }
 
 }
+
+/* =========================================
+   BALLOON LEAGUE
+   PC + MOBILE RESPONSIVE DESIGN
+========================================= */
+
+/* ---------- PC VERSION ---------- */
+
+@media (min-width: 901px) {
+
+  .s7-player-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .s7-player-card {
+    min-height: 125px;
+    padding: 28px;
+  }
+
+  .s7-player-card strong {
+    font-size: 24px;
+  }
+
+  .tournament-box {
+    padding: 38px;
+  }
+
+  .bracket {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+
+  .bracket-match {
+    min-height: 190px;
+  }
+
+  .bracket-player {
+    padding: 17px;
+  }
+
+  .bracket-player strong {
+    font-size: 18px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE VERSION
+========================================= */
+
+@media (max-width: 900px) {
+
+  /* 전체 여백 */
+
+  .section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+
+  /* 모바일 선수 목록 */
+
+  .s7-player-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 25px;
+  }
+
+  .s7-player-card {
+    min-height: 95px;
+    padding: 17px;
+    gap: 10px;
+    border-radius: 14px;
+  }
+
+  .s7-player-card > span {
+    font-size: 10px;
+  }
+
+  .s7-player-card small {
+    font-size: 7px;
+    letter-spacing: 1.5px;
+  }
+
+  .s7-player-card strong {
+    font-size: 18px;
+  }
+
+
+  /* 시즌 8 */
+
+  .tournament-box {
+    margin-top: 25px;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .tournament-header {
+    padding-bottom: 18px;
+  }
+
+  .tournament-header h3 {
+    font-size: 23px;
+  }
+
+  .tournament-status {
+    padding: 6px 9px;
+    font-size: 8px;
+  }
+
+
+  /* 모바일 대진표 */
+
+  .bracket {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .bracket-column {
+    width: 100%;
+  }
+
+  .bracket-label {
+    margin-bottom: 6px;
+    font-size: 8px;
+  }
+
+  .bracket-match {
+    min-height: auto;
+    padding: 10px;
+    gap: 6px;
+    border-radius: 13px;
+  }
+
+  .bracket-player {
+    padding: 13px;
+    border-radius: 9px;
+  }
+
+  .bracket-player strong {
+    font-size: 16px;
+  }
+
+  .bracket-player span {
+    font-size: 8px;
+  }
+
+  .bracket-vs {
+    font-size: 8px;
+  }
+
+
+  /* 부전승 */
+
+  .bye-arrow {
+    font-size: 17px;
+  }
+
+  .bye-note {
+    font-size: 9px;
+    margin-top: 8px;
+  }
+
+
+  /* 안내문 */
+
+  .schedule-note {
+    align-items: flex-start;
+    font-size: 9px;
+    line-height: 1.5;
+    margin-top: 16px;
+    padding-top: 15px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL PHONE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .s7-player-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .s7-player-card {
+    min-height: 82px;
+    padding: 13px;
+    gap: 8px;
+  }
+
+  .s7-player-card strong {
+    font-size: 16px;
+  }
+
+  .s7-player-card small {
+    font-size: 6px;
+  }
+
+  .tournament-box {
+    padding: 14px;
+  }
+
+  .tournament-header h3 {
+    font-size: 21px;
+  }
+
+  .bracket-player {
+    padding: 12px;
+  }
+
+  .bracket-player strong {
+    font-size: 15px;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONE
+========================================= */
+
+@media (max-width: 360px) {
+
+  .s7-player-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .s7-player-card {
+    min-height: 70px;
+  }
+
+  .s7-player-card strong {
+    font-size: 17px;
+  }
+
+}
