@@ -129,6 +129,11 @@
 
 <body>
 
+<!-- BALLOON LEAGUE OFFICIAL INTRO MUSIC -->
+<audio id="balloonIntroMusic" preload="auto">
+  <source src="balloon-intro.mp3" type="audio/mpeg">
+</audio>
+
 <!-- INTRO -->
 <div id="intro">
   <div class="introballoon">●</div>
@@ -146,13 +151,13 @@
     <small>BALLOON LEAGUE</small>
   </a>
 
- <nav>
-  <a href="#home">HOME</a>
-  <a href="#season">SEASON</a>
-  <a href="#records">RECORDS</a>
-  <a href="#rules">RULES</a>
-  <a href="player.html">PLAYER</a>
-</nav>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#season">SEASON</a>
+    <a href="#records">RECORDS</a>
+    <a href="#rules">RULES</a>
+    <a href="player.html">PLAYER</a>
+  </nav>
 
   <button id="menu" aria-label="메뉴 열기">☰</button>
 
@@ -468,23 +473,23 @@
     </div>
 
 
-   <div class="s7-player-card">
+    <div class="s7-player-card">
       <span>08</span>
       <div>
         <small>PLAYER</small>
         <strong>민성</strong>
       </div>
-    </div>    
+    </div>
 
 
-   <div class="s7-player-card">
+    <div class="s7-player-card">
       <span>09</span>
       <div>
         <small>PLAYER</small>
         <strong>시원</strong>
       </div>
-    </div>    
-     
+    </div>
+
   </div>
 
 </section>
@@ -644,7 +649,6 @@
       </div>
 
 
-
       <!-- MATCH 05 -->
       <div class="bracket-column">
 
@@ -671,7 +675,7 @@
         </div>
 
       </div>
-     
+
 
     <div class="schedule-note">
 
@@ -937,7 +941,7 @@
       <b>2026.09.15</b>
       BALLOON LEAGUE 공식 로고 투표
     </p>
-     
+
     <p>
       <b>SEASON 06</b>
       시은 우승
@@ -959,7 +963,7 @@
     <p>
       <b>SEASON 08</b>
       지호 우승
-    </p>     
+    </p>
 
   </div>
 
@@ -1262,6 +1266,29 @@ document.addEventListener(
       );
 
   });
+
+
+/* =========================
+   BALLOON LEAGUE INTRO MUSIC
+========================= */
+
+const balloonIntroMusic =
+  document.getElementById("balloonIntroMusic");
+
+const welcomeStartMusic =
+  document.getElementById("welcomeStart");
+
+if (balloonIntroMusic && welcomeStartMusic) {
+
+  welcomeStartMusic.addEventListener("click", () => {
+
+    balloonIntroMusic.currentTime = 0;
+
+    balloonIntroMusic.play().catch(() => {});
+
+  });
+
+}
 
 </script>
 
