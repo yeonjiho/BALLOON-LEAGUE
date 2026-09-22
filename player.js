@@ -4,7 +4,7 @@ const players = {
     number: "PLAYER 01",
     rank: "6위",
     wins: "3회",
-    finals: "3회",
+    finals: "4회",
     seasons: "8",
     championship: "SEASON 1 · SEASON 3 · SEASON 6",
     participated: [1, 2, 3, 4, 5, 6, 8, 9]
