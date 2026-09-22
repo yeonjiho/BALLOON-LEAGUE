@@ -80,7 +80,7 @@ const players = {
     participated: [2, 3, 4, 5, 6, 7, 8, 9]
   },
 
-  "혜영": {
+   "혜영": {
     number: "PLAYER 09",
     rank: "9위",
     wins: "0회",
@@ -88,7 +88,7 @@ const players = {
     seasons: "7",
     championship: "없음",
     participated: [3, 4, 5, 6, 7, 8, 9]
-  }
+  },
 
   "우성": {
     number: "PLAYER 10",
@@ -98,7 +98,7 @@ const players = {
     seasons: "2",
     championship: "없음",
     participated: [6, 8]
-  }
+  },
 
   "준서": {
     number: "PLAYER 11",
