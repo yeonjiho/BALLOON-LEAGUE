@@ -4,7 +4,7 @@ const players = {
     number: "PLAYER 01",
     rank: "6위",
     wins: "3회",
-    finals: "4회",
+    finals: "5회",
     seasons: "8",
     championship: "SEASON 1 · SEASON 3 · SEASON 6",
     participated: [1, 2, 3, 4, 5, 6, 8, 9]
@@ -14,7 +14,7 @@ const players = {
     number: "PLAYER 02",
     rank: "5위",
     wins: "3회",
-    finals: "4회",
+    finals: "6회",
     seasons: "9",
     championship: "SEASON 4 · SEASON 5 · SEASON 8",
     participated: [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -24,7 +24,7 @@ const players = {
     number: "PLAYER 03",
     rank: "4위",
     wins: "0회",
-    finals: "1회",
+    finals: "2회",
     seasons: "7",
     championship: "없음",
     participated: [1, 2, 3, 4, 5, 8, 9]
@@ -34,7 +34,7 @@ const players = {
     number: "PLAYER 04",
     rank: "시즌 9 미참",
     wins: "0회",
-    finals: "0회",
+    finals: "1회",
     seasons: "7",
     championship: "없음",
     participated: [1, 2, 3, 4, 5, 6, 7]
