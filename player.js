@@ -2,37 +2,37 @@ const players = {
 
   "시은": {
     number: "PLAYER 01",
-    rank: "5위",
+    rank: "6위",
     wins: "3회",
     finals: "3회",
-    seasons: "7",
+    seasons: "8",
     championship: "SEASON 1 · SEASON 3 · SEASON 6",
-    participated: [1, 2, 3, 4, 5, 6, 8]
+    participated: [1, 2, 3, 4, 5, 6, 8, 9]
   },
 
   "지호": {
     number: "PLAYER 02",
-    rank: "1위",
+    rank: "5위",
     wins: "3회",
     finals: "4회",
-    seasons: "8",
+    seasons: "9",
     championship: "SEASON 4 · SEASON 5 · SEASON 8",
-    participated: [1, 2, 3, 4, 5, 6, 7, 8]
+    participated: [1, 2, 3, 4, 5, 6, 7, 8, 9]
   },
 
   "서한": {
     number: "PLAYER 03",
-    rank: "2위",
+    rank: "4위",
     wins: "0회",
     finals: "1회",
-    seasons: "6",
+    seasons: "7",
     championship: "없음",
-    participated: [1, 2, 3, 4, 5, 8]
+    participated: [1, 2, 3, 4, 5, 8, 9]
   },
 
   "민준": {
     number: "PLAYER 04",
-    rank: "시즌 8 미참",
+    rank: "시즌 9 미참",
     wins: "0회",
     finals: "0회",
     seasons: "7",
@@ -45,9 +45,9 @@ const players = {
     rank: "8위",
     wins: "0회",
     finals: "0회",
-    seasons: "8",
+    seasons: "9",
     championship: "없음",
-    participated: [1, 2, 3, 4, 5, 6, 7, 8]
+    participated: [1, 2, 3, 4, 5, 6, 7, 8, 9]
   },
 
   "서빈": {
@@ -55,19 +55,19 @@ const players = {
     rank: "3위",
     wins: "1회",
     finals: "1회",
-    seasons: "6",
+    seasons: "7",
     championship: "SEASON 2",
-    participated: [2, 3, 4, 5, 6, 7, 8]
+    participated: [2, 3, 4, 5, 6, 7, 8, 9]
   },
 
   "시원": {
     number: "PLAYER 07",
-    rank: "9위",
+    rank: "2위",
     wins: "0회",
-    finals: "0회",
-    seasons: "6",
+    finals: "1회",
+    seasons: "7",
     championship: "없음",
-    participated: [2, 3, 4, 6, 7, 8]
+    participated: [2, 3, 4, 6, 7, 8, 9]
   },
 
   "준우": {
@@ -75,19 +75,39 @@ const players = {
     rank: "7위",
     wins: "1회",
     finals: "1회",
-    seasons: "6",
+    seasons: "7",
     championship: "SEASON 7",
-    participated: [2, 3, 4, 5, 6, 7, 8]
+    participated: [2, 3, 4, 5, 6, 7, 8, 9]
   },
 
   "혜영": {
     number: "PLAYER 09",
-    rank: "4위",
+    rank: "9위",
     wins: "0회",
     finals: "0회",
-    seasons: "6",
+    seasons: "7",
     championship: "없음",
-    participated: [3, 4, 5, 6, 7, 8]
+    participated: [3, 4, 5, 6, 7, 8, 9]
+  }
+
+  "우성": {
+    number: "PLAYER 10",
+    rank: "시즌 9 미참",
+    wins: "0회",
+    finals: "0회",
+    seasons: "2",
+    championship: "없음",
+    participated: [6, 8]
+  }
+
+  "준서": {
+    number: "PLAYER 11",
+    rank: "1위",
+    wins: "1회",
+    finals: "1회",
+    seasons: "1",
+    championship: "없음",
+    participated: [9]
   }
 
 };
