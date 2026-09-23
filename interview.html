@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="description" content="풍선리그 선수 인터뷰 공개 예정">
+<title>PLAYER INTERVIEW | BALLOON LEAGUE</title>
+
+<style>
+
+/* =========================
+   BALLOON LEAGUE
+   PLAYER INTERVIEW TEASER
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #f3f3f1;
+  color: #111;
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  width: 100%;
+  padding: 22px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  background: #f3f3f1;
+}
+
+.logo {
+  color: #111;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: -1px;
+}
+
+.logo small {
+  display: block;
+  margin-top: 3px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.back {
+  color: #111;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  border: 1px solid #111;
+  padding: 10px 14px;
+  border-radius: 999px;
+  transition: .2s ease;
+}
+
+.back:hover {
+  background: #111;
+  color: #fff;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.teaser {
+  flex: 1;
+  width: min(900px, 90%);
+  margin: 0 auto;
+  padding: 90px 20px 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.teaser-box {
+  width: 100%;
+  max-width: 720px;
+  padding: 65px 35px;
+
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 28px;
+
+  box-shadow: 0 15px 40px rgba(0,0,0,.05);
+}
+
+
+/* =========================
+   BALLOON
+========================= */
+
+.balloon {
+  font-size: 58px;
+  margin-bottom: 25px;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.label {
+  display: inline-block;
+  margin-bottom: 18px;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #777;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.teaser-box h1 {
+  margin: 0;
+
+  font-size: clamp(42px, 8vw, 72px);
+  line-height: .95;
+  font-weight: 1000;
+
+  letter-spacing: -4px;
+}
+
+.teaser-box h1 em {
+  display: block;
+  margin-top: 5px;
+
+  font-style: normal;
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.subtitle {
+  margin: 25px 0 0;
+
+  font-size: 17px;
+  font-weight: 700;
+  color: #444;
+}
+
+
+/* =========================
+   WAITING MESSAGE
+========================= */
+
+.waiting {
+  margin: 45px auto 0;
+  padding: 25px;
+
+  background: #f3f3f1;
+  border-radius: 18px;
+}
+
+.waiting small {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #888;
+}
+
+.waiting strong {
+  display: block;
+
+  font-size: 25px;
+  font-weight: 1000;
+  letter-spacing: -1px;
+}
+
+
+/* =========================
+   DATE
+========================= */
+
+.date {
+  margin-top: 28px;
+
+  font-size: 14px;
+  font-weight: 800;
+  color: #666;
+}
+
+.date strong {
+  color: #111;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+  margin-top: 30px;
+
+  font-size: 13px;
+  line-height: 1.7;
+  color: #777;
+  font-weight: 600;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 30px 20px;
+
+  text-align: center;
+
+  border-top: 1px solid #ddd;
+
+  color: #777;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .header {
+    padding: 18px 5%;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .back {
+    font-size: 11px;
+    padding: 8px 11px;
+  }
+
+  .teaser {
+    width: 94%;
+    padding: 55px 10px 70px;
+  }
+
+  .teaser-box {
+    padding: 50px 22px;
+    border-radius: 22px;
+  }
+
+  .balloon {
+    font-size: 48px;
+  }
+
+  .teaser-box h1 {
+    font-size: 48px;
+    letter-spacing: -3px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .waiting {
+    margin-top: 35px;
+    padding: 21px;
+  }
+
+  .waiting strong {
+    font-size: 21px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+  <a class="logo" href="index.html">
+    🎈 풍선리그
+    <small>BALLOON LEAGUE</small>
+  </a>
+
+  <a class="back" href="index.html">
+    ← HOME
+  </a>
+
+</header>
+
+
+<!-- =========================
+     TEASER
+========================= -->
+
+<main class="teaser">
+
+  <section class="teaser-box">
+
+    <div class="balloon">
+      🎈
+    </div>
+
+    <span class="label">
+      BALLOON LEAGUE SPECIAL
+    </span>
+
+    <h1>
+      PLAYER
+      <em>INTERVIEW</em>
+    </h1>
+
+    <p class="subtitle">
+      BALLOON LEAGUE 선수들의 이야기
+    </p>
+
+
+    <!-- WAITING -->
+
+    <div class="waiting">
+
+      <small>
+        COMING SOON
+      </small>
+
+      <strong>
+        20일을 기다리는 중...
+      </strong>
+
+    </div>
+
+
+    <!-- DATE -->
+
+    <div class="date">
+      공개일 · <strong>2026.09.27</strong>
+    </div>
+
+
+    <!-- MESSAGE -->
+
+    <p class="message">
+      선수들의 진짜 이야기가 곧 공개됩니다.<br>
+      하루 전, 다시 찾아와 주세요. 🎈
+    </p>
+
+  </section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+  © 2026 풍선리그 · BALLOON LEAGUE · PLAYER INTERVIEW
+</footer>
+
+
+</body>
+</html>
