@@ -1,1395 +1,1322 @@
-*{
-  box-sizing:border-box
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="풍선리그 공식 웹사이트">
+<title>풍선리그 | BALLOON LEAGUE</title>
+<link rel="stylesheet" href="style.css">
+
+  <!-- =========================
+     20 DAYS SPECIAL
+========================= -->
+<section class="twenty-days-special">
+  <img src="20-days-logo.png" alt="BALLOON LEAGUE 20 DAYS">
+
+  <div class="twenty-days-text">
+    <div class="twenty-days-title">20 DAYS</div>
+    <div class="twenty-days-subtitle">BALLOON LEAGUE FOUNDATION ANNIVERSARY</div>
+
+    <div class="twenty-days-countdown">
+      <span id="twentyDaysCountdown">D-4</span>
+    </div>
+
+    <p>창립 20일을 기다리는 중 🎈</p>
+  </div>
+</section>   
+
+<style>
+/* =========================
+   SEASON 11 COUNTDOWN
+========================= */
+
+.season8-main-balloon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.season8-balloon-content {
+  text-align: center;
+  color: #111;
+  line-height: 1.3;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-html{
-  scroll-behavior:smooth
+.season8-balloon-content strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 
-body{
-  margin:0;
-  font-family:Arial,"Noto Sans KR",sans-serif;
-  background:#f3f3f1;
-  color:#111
+.season8-balloon-content span {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 4px;
 }
 
+#season8-countdown {
+  margin-top: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
 
-/* =========================================
-   INTRO
-========================================= */
-
-#intro{
-  position:fixed;
-  inset:0;
-  background:#09090a;
-  color:#fff;
-  z-index:99;
-  display:grid;
-  place-content:center;
-  text-align:center;
-  transition:.7s
+#season8-countdown b {
+  font-size: 20px;
 }
 
-body.loaded #intro{
-  opacity:0;
-  visibility:hidden
+#season8-countdown small {
+  font-size: 9px;
+  margin-right: 3px;
 }
 
-.introballoon{
-  font-size:60px;
-  color:#d7192e;
-  animation:pulse 1s infinite
+.season8-main-balloon {
+  width: 230px !important;
+  height: 280px !important;
 }
 
-#intro b{
-  font-size:34px
+/* =========================
+   HAMBURGER MENU
+========================= */
+
+#menu {
+  display: block;
+  border: none;
+  background: none;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 10001;
 }
 
-#intro small{
-  letter-spacing:5px;
-  color:#888
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background: #111;
+  color: #fff;
+  z-index: 10000;
+  padding: 80px 30px 30px;
+  box-sizing: border-box;
+  transition: right 0.35s ease;
+  box-shadow: -10px 0 30px rgba(0,0,0,.25);
 }
 
-#intro i{
-  width:120px;
-  height:2px;
-  background:#d7192e;
-  display:block;
-  margin:25px auto;
-  animation:load 1s infinite
+.mobile-menu.open {
+  right: 0;
 }
 
-@keyframes pulse{
-  50%{
-    transform:scale(1.2)
-  }
+.mobile-menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 18px 0;
+  border-bottom: 1px solid #333;
+}
+
+#menuClose {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
 }
 
-@keyframes load{
-  from{
-    transform:translateX(-50px)
+@media (min-width: 901px) {
+  #menu {
+    display: none;
   }
-  to{
-    transform:translateX(50px)
+
+  .mobile-menu {
+    display: none;
   }
 }
+</style>
 
+</head>
 
-/* =========================================
-   HEADER
-========================================= */
-
-header{
-  height:70px;
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:#fffddf0;
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid #ddd;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 6%
-}
+<body>
 
-.logo{
-  font-weight:900;
-  color:#111;
-  text-decoration:none
-}
+<!-- BALLOON LEAGUE OFFICIAL INTRO MUSIC -->
+<audio id="balloonIntroMusic" preload="auto">
+  <source src="balloon-intro.mp3" type="audio/mpeg">
+</audio>
 
-.logo:first-letter{
-  color:#d7192e
-}
+<!-- INTRO -->
+<div id="intro">
+  <div class="introballoon">●</div>
+  <b>풍선리그</b>
+  <small>BALLOON LEAGUE</small>
+  <i></i>
+</div>
 
-.logo small{
-  display:block;
-  margin-left:18px;
-  font-size:8px;
-  letter-spacing:2px;
-  color:#888
-}
 
-nav{
-  display:flex;
-  gap:25px
-}
+<!-- HEADER -->
+<header>
 
-nav a{
-  font-size:10px;
-  font-weight:900;
-  color:#222;
-  text-decoration:none;
-  letter-spacing:1px
-}
+  <a class="logo" href="#home">
+    ● 풍선리그
+    <small>BALLOON LEAGUE</small>
+  </a>
 
-#menu{
-  display:none;
-  border:0;
-  background:none;
-  font-size:22px;
-  cursor:pointer
-}
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#season">SEASON</a>
+    <a href="#records">RECORDS</a>
+    <a href="#rules">RULES</a>
+    <a href="rankings.html">RANKINGS</a>
+    <a href="player.html">PLAYER</a>
+    <a href="interview.html">PLAYER INTERVIEW</a>
+  </nav>
 
+  <button id="menu" aria-label="메뉴 열기">☰</button>
 
-/* =========================================
-   HERO
-========================================= */
-
-.hero{
-  min-height:650px;
-  background:#09090a;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  padding:80px 9%;
-  position:relative;
-  overflow:hidden
-}
+</header>
 
-.hero>div:first-child{
-  z-index:2
-}
 
-.hero p,
-label{
-  font-size:9px;
-  letter-spacing:4px;
-  color:#999
-}
+<!-- HAMBURGER MENU -->
+<div class="mobile-menu" id="mobileMenu">
 
-.hero h1{
-  font-size:clamp(60px,10vw,120px);
-  line-height:.8;
-  letter-spacing:-6px;
-  margin:25px 0
-}
+  <button id="menuClose" aria-label="메뉴 닫기">×</button>
 
-.hero h1 em,
-.dark em{
-  font-style:normal;
-  color:#d7192e
-}
+  <a href="#home">HOME</a>
+  <a href="#season">SEASON 7</a>
+  <a href="#records">RECORDS</a>
 
-.hero h2{
-  font-size:17px;
-  line-height:1.7;
-  color:#aaa;
-  font-weight:400
-}
+  <a href="rankings.html">🏆 역대 순위</a>
+  <a href="player.html">PLAYER</a>
+  <a href="interview.html">🎈 PLAYER INTERVIEW</a>
+  <a href="#rules">RULES</a>
+  <a href="#fouls">FOULS</a>
+  <a href="#history">HISTORY</a>
 
-.btn{
-  display:inline-block;
-  margin-top:25px;
-  padding:15px 20px;
-  background:#d7192e;
-  color:#fff;
-  text-decoration:none;
-  font-weight:900;
-  font-size:11px
-}
+</div>
 
 
-/* =========================================
-   MAIN BALLOON
-========================================= */
-
-.balloon{
-  position:absolute;
-  right:15%;
-  width:230px;
-  height:280px;
-  border-radius:50%;
-  background:#eee;
-  color:#111;
-  display:grid;
-  place-content:center;
-  font-size:20px;
-  box-shadow:
-    inset -25px -25px 50px #aaa,
-    0 25px 80px #000;
-  animation:float 3s ease-in-out infinite;
-  z-index:1
-}
+<!-- HOME -->
+<section id="home" class="hero">
 
-@keyframes float{
-  50%{
-    transform:translateY(-25px) rotate(2deg)
-  }
-}
+  <div>
 
+    <p>OFFICIAL LEAGUE WEBSITE</p>
 
-/* 시즌 8 카운트다운 */
+    <h1>
+      PLAY.<br>
+      <em>FLOAT.</em><br>
+      WIN.
+    </h1>
 
-.season8-main-balloon{
-  display:flex;
-  align-items:center;
-  justify-content:center
-}
+    <h2>
+      점심시간의 한 게임에서 시작된<br>
+      우리만의 스포츠 리그.
+    </h2>
 
-.season8-balloon-content{
-  width:100%;
-  padding:10px;
-  text-align:center;
-  color:#111;
-  line-height:1.3
-}
+    <a class="btn" href="#season">
+      SEASON 10 보기
+    </a>
 
-.season8-balloon-content strong{
-  display:block;
-  font-size:22px;
-  font-weight:900;
-  letter-spacing:1px
-}
+  </div>
 
-.season8-balloon-content span{
-  display:block;
-  margin-top:4px;
-  font-size:14px;
-  font-weight:700
-}
 
-#season8-countdown{
-  margin-top:12px;
-  font-weight:900;
-  white-space:nowrap
-}
+  <!-- 기존 풍선에 시즌 10 카운트다운 삽입 -->
+  <div class="balloon season8-main-balloon">
 
-#season8-countdown b{
-  font-size:21px
-}
+    <div class="season8-balloon-content">
 
-#season8-countdown small{
-  font-size:9px;
-  margin-right:3px
-}
+      <strong>SEASON 11</strong>
 
+      <span>개막까지</span>
 
-/* =========================================
-   SCROLL
-========================================= */
+      <div id="season8-countdown">
 
-.scroll{
-  position:absolute;
-  bottom:20px;
-  font-size:9px;
-  letter-spacing:3px;
-  color:#777
-}
+        <b id="days">00</b>
+        <small>일</small>
 
+        <b id="hours">00</b>
+        <small>시간</small>
 
-/* =========================================
-   TICKER
-========================================= */
-
-.ticker{
-  white-space:nowrap;
-  overflow:hidden;
-  background:#d7192e;
-  color:#fff;
-  font-weight:900;
-  font-size:11px;
-  padding:12px;
-  animation:marquee 18s linear infinite
-}
+        <b id="minutes">00</b>
+        <small>분</small>
 
-@keyframes marquee{
-  50%{
-    text-indent:-35%
-  }
-}
+        <b id="seconds">00</b>
+        <small>초</small>
 
+      </div>
 
-/* =========================================
-   SECTIONS
-========================================= */
+    </div>
 
-section{
-  padding:85px 8%;
-  max-width:1200px;
-  margin:auto
-}
+  </div>
 
-section.dark{
-  max-width:none;
-  background:#09090a;
-  color:#fff
-}
 
+  <span class="scroll">
+    SCROLL ↓
+  </span>
 
-/* =========================================
-   SEASON
-========================================= */
+</section>
 
-.season{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-  max-width:1000px;
-  margin:auto
-}
 
-.champ{
-  padding:40px;
-  border:1px solid #333;
-  background:linear-gradient(145deg,#151516,#0b0b0c)
-}
+<!-- TICKER -->
+<div class="ticker">
 
-.champ small{
-  display:block;
-  color:#999;
-  letter-spacing:3px
-}
+  🎈 BALLOON LEAGUE　•　OFFICIAL　•　
+  SEASON 10 CHAMPION: 시은　•　
+  BALLOON LEAGUE　•　OFFICIAL　•
 
-.champ strong{
-  display:block;
-  color:#d7192e;
-  font-size:70px;
-  margin:25px 0
-}
+</div>
 
-.champ b{
-  display:block;
-  font-size:55px
-}
 
-.champ span{
-  display:block;
-  color:#999;
-  font-size:10px;
-  margin-top:8px
-}
+<!-- SEASON 10 -->
+<section id="season" class="dark">
 
-.match{
-  background:#fff;
-  color:#111;
-  padding:35px
-}
+  <label>01 / CURRENT SEASON</label>
 
-.match small{
-  color:#999;
-  letter-spacing:2px
-}
+  <h2>
+    SEASON <em>10</em>
+  </h2>
 
-.match b{
-  display:block;
-  font-size:45px;
-  margin:45px 0 10px
-}
+  <div class="season">
 
-.match strong{
-  background:#111;
-  color:#fff;
-  padding:8px;
-  font-size:10px
-}
+    <div class="champ">
 
-.match p{
-  color:#777
-}
+      <small>CHAMPION</small>
 
+      <strong>★★★★</strong>
 
-/* =========================================
-   RECORDS
-========================================= */
+      <b>시은</b>
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px
-}
+      <span>
+        SEASON 10 WINNER · 4TH TITLE
+      </span>
 
-.cards article{
-  background:#fff;
-  border:1px solid #ddd;
-  padding:25px;
-  transition:.25s
-}
+    </div>
 
-.cards article:hover{
-  transform:translateY(-8px);
-  box-shadow:0 15px 35px #0002
-}
 
-.cards .new{
-  border-top:4px solid #d7192e
-}
+    <div class="match">
 
-.cards i{
-  display:block;
-  color:#aaa;
-  font-size:9px
-}
+      <small>
+        SEASON 10 · Runner-up
+      </small>
 
-.cards b{
-  display:block;
-  font-size:30px;
-  margin:35px 0 5px
-}
+      <b>지호</b>
 
-.cards strong{
-  display:block;
-  color:#d7192e;
-  letter-spacing:3px
-}
+      <strong>Runner-up</strong>
 
-.cards p{
-  font-size:11px;
-  color:#777
-}
+      <p>
+        시즌 10 준우승
+      </p>
 
-.cards small{
-  font-size:9px;
-  letter-spacing:2px
-}
+    </div>
 
+  </div>
 
-/* =========================================
-   RULES
-========================================= */
+</section>
 
-.rules{
-  background:#eee;
-  max-width:none
-}
 
-.rulegrid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  max-width:1050px;
-  margin:auto
-}
+<!-- RECORDS -->
+<section id="records">
 
-.rulegrid article{
-  padding:25px;
-  border-top:1px solid #bbb;
-  border-left:1px solid #bbb
-}
+  <label>02 / ALL-TIME</label>
 
-.rulegrid b{
-  color:#d7192e
-}
+  <h2>CHAMPIONS</h2>
 
-.rulegrid h3{
-  font-size:18px
-}
+  <div class="cards">
 
-.rulegrid p{
-  font-size:11px;
-  color:#666;
-  line-height:1.6
-}
+    <article class="new">
 
+      <i>01</i>
 
-/* =========================================
-   FOULS
-========================================= */
+      <b>시은</b>
 
-.fwgrid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-  max-width:1050px;
-  margin:auto
-}
+      <strong>★★★★</strong>
 
-.fwgrid>div{
-  background:#fff;
-  border:1px solid #ddd;
-  padding:28px
-}
+      <p>
+        시즌 1 · 3 · 6 · 10
+      </p>
 
-.fwgrid h3{
-  margin-top:0;
-  font-size:22px
-}
+      <small>
+        4 TITLES
+      </small>
 
-.fwgrid article{
-  display:flex;
-  gap:18px;
-  border-top:1px solid #ddd;
-  padding:18px 0
-}
+    </article>
 
-.fwgrid article b{
-  color:#d7192e;
-  font-size:12px
-}
 
-.fwgrid article p{
-  margin:0;
-  font-size:12px;
-  color:#555;
-  line-height:1.6
-}
+    <article>
 
+      <i>02</i>
 
-/* =========================================
-   HISTORY
-========================================= */
+      <b>지호</b>
 
-.timeline{
-  max-width:800px;
-  border-left:1px solid #444;
-  margin:auto
-}
+      <strong>★★★</strong>
 
-.timeline p{
-  padding:0 0 25px 28px;
-  margin:0;
-  color:#aaa
-}
+      <p>
+        시즌 4 · 5 · 8
+      </p>
 
-.timeline b{
-  display:block;
-  color:#fff;
-  font-size:20px;
-  margin-bottom:5px
-}
+      <small>
+        3 TITLES
+      </small>
 
+    </article>
 
-/* =========================================
-   SEASON 7 PLAYERS
-========================================= */
 
-.s7-player-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-  margin-top:35px
-}
+    <article>
 
-.s7-player-card{
-  position:relative;
-  display:flex;
-  align-items:center;
-  gap:18px;
-  padding:24px;
-  border:1px solid rgba(0,0,0,.1);
-  border-radius:18px;
-  background:rgba(255,255,255,.8);
-  box-shadow:0 10px 30px rgba(0,0,0,.06);
-  transition:.3s ease;
-  overflow:hidden
-}
+      <i>03</i>
 
-.s7-player-card::after{
-  content:"";
-  position:absolute;
-  width:70px;
-  height:70px;
-  right:-25px;
-  top:-25px;
-  border-radius:50%;
-  background:rgba(220,0,0,.06)
-}
+      <b>서빈</b>
 
-.s7-player-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 18px 35px rgba(0,0,0,.1)
-}
+      <strong>★</strong>
 
-.s7-player-card>span{
-  font-size:13px;
-  font-weight:800;
-  color:#d00000;
-  letter-spacing:1px
-}
+      <p>
+        시즌 2
+      </p>
 
-.s7-player-card small{
-  display:block;
-  margin-bottom:4px;
-  font-size:9px;
-  letter-spacing:2px;
-  opacity:.45
-}
+      <small>
+        1 TITLE
+      </small>
 
-.s7-player-card strong{
-  font-size:22px
-}
+    </article>
 
 
-/* =========================================
-   SEASON 8 TOURNAMENT
-========================================= */
+    <article>
 
-.season8-section{
-  position:relative
-}
+      <i>04</i>
 
-.tournament-box{
-  margin-top:35px;
-  padding:30px;
-  border-radius:24px;
-  background:#111;
-  color:#fff;
-  box-shadow:0 20px 50px rgba(0,0,0,.18)
-}
+      <b>준우</b>
 
-.tournament-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding-bottom:25px;
-  border-bottom:1px solid rgba(255,255,255,.12)
-}
+      <strong>★</strong>
 
-.tournament-header small{
-  font-size:10px;
-  letter-spacing:3px;
-  opacity:.5
-}
+      <p>
+        시즌 7
+      </p>
 
-.tournament-header h3{
-  margin:5px 0 0;
-  font-size:30px
-}
+      <small>
+        1 TITLE
+      </small>
 
-.tournament-status{
-  padding:8px 14px;
-  border:1px solid rgba(255,255,255,.2);
-  border-radius:30px;
-  font-size:10px;
-  letter-spacing:2px
-}
+    </article>
 
-.bracket{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-  margin-top:30px
-}
 
-.bracket-column{
-  position:relative
-}
+    <article>
 
-.bracket-label{
-  margin-bottom:10px;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:2px;
-  opacity:.45
-}
+      <i>05</i>
 
-.bracket-match{
-  min-height:170px;
-  padding:15px;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:16px;
-  background:rgba(255,255,255,.045);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:10px
-}
+      <b>준서</b>
 
-.bracket-player{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:15px;
-  border-radius:10px;
-  background:rgba(255,255,255,.07);
-  transition:.25s ease
-}
+      <strong>★</strong>
 
-.bracket-player:hover{
-  background:rgba(255,255,255,.13)
-}
+      <p>
+        시즌 9
+      </p>
 
-.bracket-player span{
-  font-size:9px;
-  opacity:.4;
-  letter-spacing:1px
-}
+      <small>
+        1 TITLES
+      </small>
 
-.bracket-player strong{
-  font-size:17px
-}
+    </article>     
 
-.bracket-vs{
-  text-align:center;
-  font-size:9px;
-  font-weight:800;
-  letter-spacing:2px;
-  opacity:.4
-}
+  </div>
 
-.bye-arrow{
-  text-align:center;
-  font-size:20px;
-  opacity:.5
-}
+</section>
 
-.bye-player{
-  border:1px dashed rgba(255,255,255,.2)
-}
 
-.bye-player strong{
-  color:#fff
-}
+<!-- SEASON 10 PLAYERS -->
+<section id="season8-players" class="section">
 
-.bye-note{
-  margin:12px 0 0;
-  text-align:center;
-  font-size:10px;
-  line-height:1.5;
-  color:rgba(255,255,255,.45)
-}
+  <div class="section-head">
 
-.schedule-note{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin-top:22px;
-  padding-top:20px;
-  border-top:1px solid rgba(255,255,255,.1);
-  font-size:11px;
-  color:rgba(255,255,255,.45)
-}
+    <span>SEASON 10</span>
 
-.schedule-note span{
-  color:#e00000
-}
+    <h2>
+      시즌 10 참가선수
+    </h2>
 
+    <p>
+      Season 10 Official Participants
+    </p>
 
-/* =========================================
-   FOOTER
-========================================= */
-
-footer{
-  background:#111;
-  color:#777;
-  text-align:center;
-  padding:30px;
-  font-size:10px;
-  letter-spacing:1px
-}
+  </div>
 
 
-/* =========================================
-   WELCOME POPUP
-========================================= */
-
-.welcome-popup{
-  position:fixed;
-  inset:0;
-  z-index:99999;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  animation:welcomeFadeIn .45s ease
-}
+  <div class="s7-player-grid">
 
-.welcome-popup.hidden{
-  display:none
-}
+    <div class="s7-player-card">
+      <span>01</span>
+      <div>
+        <small>PLAYER</small>
+        <strong>시은</strong>
+      </div>
+    </div>
 
-.welcome-popup.closing{
-  animation:welcomeFadeOut .35s ease forwards
-}
 
-.welcome-overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.72);
-  backdrop-filter:blur(7px)
-}
+    <div class="s7-player-card">
+      <span>02</span>
+      <div>
+        <small>PLAYER</small>
+        <strong>지호</strong>
+      </div>
+    </div>
 
-.welcome-box{
-  position:relative;
-  z-index:2;
-  width:min(460px,calc(100% - 36px));
-  padding:42px 35px 30px;
-  border-radius:26px;
-  background:#fff;
-  color:#111;
-  text-align:center;
-  box-shadow:0 30px 90px rgba(0,0,0,.35);
-  animation:welcomeBoxIn .55s cubic-bezier(.2,.8,.2,1)
-}
 
-.welcome-close{
-  position:absolute;
-  top:14px;
-  right:17px;
-  width:34px;
-  height:34px;
-  border:0;
-  background:transparent;
-  font-size:27px;
-  line-height:1;
-  cursor:pointer;
-  opacity:.45;
-  transition:.2s
-}
+    <div class="s7-player-card">
+      <span>03</span>
+      <div>
+        <small>PLAYER</small>
+        <strong>서빈</strong>
+      </div>
+    </div>
 
-.welcome-close:hover{
-  opacity:1;
-  transform:rotate(90deg)
-}
 
-.welcome-balloon{
-  width:72px;
-  height:72px;
-  margin:0 auto 18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:#f3f3f3;
-  font-size:38px;
-  animation:balloonFloat 2.5s ease-in-out infinite
-}
+    <div class="s7-player-card">
+      <span>04</span>
+      <div>
+        <small>PLAYER</small>
+        <strong>준서</strong>
+      </div>
+    </div>
 
-.welcome-tag{
-  display:inline-block;
-  margin-bottom:9px;
-  font-size:9px;
-  font-weight:800;
-  letter-spacing:3px;
-  color:#d00000
-}
 
-.welcome-box h2{
-  margin:0;
-  font-size:31px;
-  font-weight:900;
-  letter-spacing:-1px
-}
+    <div class="s7-player-card">
+      <span>05</span>
+      <div>
+        <small>PLAYER</small>
+        <strong>민성</strong>
+      </div>
+    </div>
 
-.welcome-box h3{
-  margin:12px 0 14px;
-  font-size:18px
-}
 
-.welcome-box p{
-  margin:0;
-  color:#777;
-  font-size:13px;
-  line-height:1.8
-}
+    <div class="s7-player-card">
+      <span>06</span>
+      <div>
+        <small>PLAYER</small>
+        <strong>혜영</strong>
+      </div>
+    </div>
 
-.welcome-start{
-  width:100%;
-  margin-top:25px;
-  padding:15px 18px;
-  border:0;
-  border-radius:13px;
-  background:#111;
-  color:#fff;
-  font-size:13px;
-  font-weight:800;
-  cursor:pointer;
-  transition:.25s ease
-}
 
-.welcome-start span{
-  margin-left:8px;
-  transition:.25s ease
-}
+    <div class="s7-player-card">
+      <span>07</span>
+      <div>
+        <small>PLAYER</small>
+        <strong>서한</strong>
+      </div>
+    </div>
 
-.welcome-start:hover{
-  transform:translateY(-3px);
-  background:#d00000;
-  box-shadow:0 10px 25px rgba(208,0,0,.25)
-}
 
-.welcome-start:hover span{
-  margin-left:14px
-}
+    <div class="s7-player-card">
+      <span>08</span>
+      <div>
+        <small>PLAYER</small>
+        <strong>정윤</strong>
+      </div>
+    </div>
 
-.welcome-check{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:7px;
-  margin-top:17px;
-  color:#999;
-  font-size:10px;
-  cursor:pointer
-}
 
-.welcome-check input{
-  accent-color:#111
-}
+  </div>
 
+</section>
 
-/* =========================================
-   ANIMATIONS
-========================================= */
 
-@keyframes welcomeFadeIn{
-  from{
-    opacity:0
-  }
-  to{
-    opacity:1
-  }
-}
+<!-- SEASON 11 -->
+<section id="season8" class="section season8-section">
 
-@keyframes welcomeFadeOut{
-  from{
-    opacity:1
-  }
-  to{
-    opacity:0
-  }
-}
+  <div class="section-head">
 
-@keyframes welcomeBoxIn{
-  from{
-    opacity:0;
-    transform:translateY(35px) scale(.94)
-  }
-  to{
-    opacity:1;
-    transform:translateY(0) scale(1)
-  }
-}
+    <span>SEASON 11</span>
 
-@keyframes balloonFloat{
-  0%,100%{
-    transform:translateY(0)
-  }
-  50%{
-    transform:translateY(-8px)
-  }
-}
+    <h2>
+      시즌 11 일정
+    </h2>
 
+    <p>
+      현재까지 일정 · 참가선수에 따라 일정이 변경될 수 있습니다.
+    </p>
 
-/* =========================================
-   HAMBURGER
-========================================= */
-
-.hamburger{
-  width:44px;
-  height:44px;
-  border:0;
-  background:transparent;
-  display:none;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  gap:5px;
-  cursor:pointer;
-  position:relative;
-  z-index:10001
-}
+  </div>
 
-.hamburger span{
-  display:block;
-  width:23px;
-  height:2px;
-  background:#111;
-  transition:.3s ease
-}
 
-.hamburger.active span:nth-child(1){
-  transform:translateY(7px) rotate(45deg)
-}
+  <div class="tournament-box">
 
-.hamburger.active span:nth-child(2){
-  opacity:0
-}
+    <div class="tournament-header">
 
-.hamburger.active span:nth-child(3){
-  transform:translateY(-7px) rotate(-45deg)
-}
+      <div>
 
-.mobile-menu{
-  position:fixed;
-  top:0;
-  right:-100%;
-  width:min(340px,85%);
-  height:100vh;
-  background:#fff;
-  z-index:10000;
-  padding:100px 30px 30px;
-  box-shadow:-15px 0 40px rgba(0,0,0,.12);
-  display:flex;
-  flex-direction:column;
-  gap:5px;
-  transition:right .4s cubic-bezier(.2,.8,.2,1)
-}
+        <small>SEASON 10</small>
 
-.mobile-menu.active{
-  right:0
-}
+        <h3>
+          8강전
+        </h3>
 
-.mobile-menu a{
-  padding:18px 12px;
-  color:#111;
-  text-decoration:none;
-  font-size:15px;
-  font-weight:800;
-  border-bottom:1px solid #eee;
-  transition:.2s
-}
+      </div>
 
-.mobile-menu a:hover{
-  color:#d00000;
-  padding-left:20px
-}
+      <div class="tournament-status">
+        SCHEDULE
+      </div>
 
+    </div>
 
-/* =========================================
-   TABLET
-========================================= */
 
-@media (max-width:900px){
+    <div class="bracket">
 
-  .hamburger{
-    display:flex
-  }
 
-  nav{
-    display:none
-  }
+<!-- MATCH 01 -->
+<div class="bracket-column">
 
-  .hero{
-    min-height:600px
-  }
+  <div class="bracket-label">
+    MATCH 01
+  </div>
 
-  .s7-player-grid{
-    grid-template-columns:repeat(2,1fr)
-  }
+  <div class="bracket-match">
 
-  .bracket{
-    grid-template-columns:repeat(2,1fr)
-  }
+    <div class="bracket-player">
+      <span>01</span>
+      <strong>시은</strong>
+    </div>
 
-  .fwgrid{
-    grid-template-columns:1fr
-  }
+    <div class="bracket-vs">
+      VS
+    </div>
 
-  .tournament-box{
-    padding:20px
-  }
+    <div class="bracket-player">
+      <span>08</span>
+      <strong>정윤</strong>
+    </div>
 
-  .bracket{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    margin-top:20px
-  }
+  </div>
 
-  .bracket-column{
-    width:100%
-  }
+</div>
 
-  .bracket-label{
-    margin-bottom:6px;
-    font-size:8px
-  }
 
-  .bracket-match{
-    min-height:auto;
-    padding:10px;
-    gap:6px;
-    border-radius:13px
-  }
+<!-- MATCH 02 -->
+<div class="bracket-column">
 
-  .bracket-player{
-    padding:13px;
-    border-radius:9px
-  }
+  <div class="bracket-label">
+    MATCH 02
+  </div>
 
-  .bracket-player strong{
-    font-size:16px
-  }
+  <div class="bracket-match">
 
-  .bracket-player span{
-    font-size:8px
-  }
+    <div class="bracket-player">
+      <span>02</span>
+      <strong>지호</strong>
+    </div>
 
-  .bracket-vs{
-    font-size:8px
-  }
+    <div class="bracket-vs">
+      VS
+    </div>
 
-  .bye-arrow{
-    font-size:17px
-  }
+    <div class="bracket-player">
+      <span>07</span>
+      <strong>서한</strong>
+    </div>
 
-  .bye-note{
-    font-size:9px;
-    margin-top:8px
-  }
+  </div>
 
-  .schedule-note{
-    align-items:flex-start;
-    font-size:9px;
-    line-height:1.5;
-    margin-top:16px;
-    padding-top:15px
-  }
+</div>
 
-  .section{
-    padding-left:18px;
-    padding-right:18px
-  }
 
-}
+<!-- MATCH 03 -->
+<div class="bracket-column">
 
+  <div class="bracket-label">
+    MATCH 03
+  </div>
 
-/* =========================================
-   MOBILE
-========================================= */
+  <div class="bracket-match">
 
-@media (max-width:600px){
+    <div class="bracket-player">
+      <span>03</span>
+      <strong>서빈</strong>
+    </div>
 
-  /* 풍선 핵심 수정
-     화면 밖으로 나가지 않도록 함 */
+    <div class="bracket-vs">
+      VS
+    </div>
 
-  .balloon{
-    width:190px;
-    height:235px;
-    right:18px;
-    opacity:1;
-    z-index:1;
-  }
+    <div class="bracket-player">
+      <span>06</span>
+      <strong>혜영</strong>
+    </div>
 
-  .season8-main-balloon{
-    width:190px;
-    height:235px;
-  }
+  </div>
 
-  .season8-balloon-content{
-    padding:8px
-  }
+</div>
 
-  .season8-balloon-content strong{
-    font-size:18px
-  }
 
-  .season8-balloon-content span{
-    font-size:12px
-  }
+<!-- MATCH 04 -->
+<div class="bracket-column">
 
-  #season8-countdown{
-    margin-top:10px
-  }
+  <div class="bracket-label">
+    MATCH 04
+  </div>
 
-  #season8-countdown b{
-    font-size:17px
-  }
+  <div class="bracket-match">
 
-  #season8-countdown small{
-    font-size:8px;
-    margin-right:2px
-  }
+    <div class="bracket-player">
+      <span>04</span>
+      <strong>준서</strong>
+    </div>
 
+    <div class="bracket-vs">
+      VS
+    </div>
 
-  /* 모바일 선수 목록 */
+    <div class="bracket-player">
+      <span>05</span>
+      <strong>민성</strong>
+    </div>
 
-  .s7-player-grid{
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-    margin-top:25px
-  }
+  </div>
 
-  .s7-player-card{
-    min-height:95px;
-    padding:17px;
-    gap:10px;
-    border-radius:14px
-  }
+</div>
 
-  .s7-player-card>span{
-    font-size:10px
-  }
 
-  .s7-player-card small{
-    font-size:7px;
-    letter-spacing:1.5px
-  }
 
-  .s7-player-card strong{
-    font-size:18px
-  }
 
+      <div class="schedule-note">
 
-  /* 팝업 */
+        <span>●</span>
 
-  .welcome-box{
-    width:calc(100% - 28px);
-    padding:35px 22px 25px;
-    border-radius:22px
-  }
+        현재까지 확정된 일정입니다.
+        참가선수에 따라 대진이 변경될 수 있습니다.
 
-  .welcome-balloon{
-    width:62px;
-    height:62px;
-    font-size:32px
-  }
+      </div>
 
-  .welcome-box h2{
-    font-size:26px
-  }
+    </div>
 
-  .welcome-box h3{
-    font-size:16px
-  }
+  </div>
 
-  .welcome-box p{
-    font-size:12px
-  }
+</section>
 
-}
 
+<!-- RULES -->
+<section id="rules" class="rules">
 
-/* =========================================
-   SMALL PHONE
-========================================= */
+  <label>
+    03 / HOW TO PLAY
+  </label>
 
-@media (max-width:480px){
+  <h2>
+    RULES
+  </h2>
 
-  .hero{
-    padding-left:6%;
-    padding-right:6%
-  }
 
-  .hero h1{
-    letter-spacing:-4px
-  }
+  <div class="rulegrid">
 
-  .season,
-  .cards,
-  .rulegrid{
-    grid-template-columns:1fr
-  }
 
-  .s7-player-grid{
-    grid-template-columns:1fr 1fr;
-    gap:8px
-  }
+    <article>
 
-  .s7-player-card{
-    min-height:82px;
-    padding:13px;
-    gap:8px
-  }
+      <b>01</b>
 
-  .s7-player-card strong{
-    font-size:16px
-  }
+      <h3>
+        3 TOUCHES
+      </h3>
 
-  .s7-player-card small{
-    font-size:6px
-  }
+      <p>
+        상대 구역으로 넘기기 전 최대 3번 터치.
+      </p>
 
-  .tournament-box{
-    padding:14px
-  }
+    </article>
 
-  .tournament-header h3{
-    font-size:21px
-  }
 
-  .bracket-player{
-    padding:12px
-  }
+    <article>
 
-  .bracket-player strong{
-    font-size:15px
-  }
+      <b>02</b>
 
-  /* 아주 작은 화면에서는 풍선을 조금 더 작게 */
+      <h3>
+        NO FLOOR
+      </h3>
 
-  .balloon,
-  .season8-main-balloon{
-    width:170px;
-    height:210px;
-    right:12px
-  }
+      <p>
+        풍선이 바닥에 떨어지면 상대에게 1점.
+      </p>
 
-  .season8-balloon-content strong{
-    font-size:16px
-  }
+    </article>
 
-  #season8-countdown b{
-    font-size:15px
-  }
 
-  #season8-countdown small{
-    font-size:7px
-  }
+    <article>
 
-}
+      <b>03</b>
 
+      <h3>
+        OUT
+      </h3>
 
-/* =========================================
-   VERY SMALL PHONE
-========================================= */
+      <p>
+        경기장 밖으로 나가면 상대에게 1점.
+      </p>
 
-@media (max-width:360px){
+    </article>
 
-  .s7-player-grid{
-    grid-template-columns:1fr
-  }
 
-  .s7-player-card{
-    min-height:70px
-  }
+    <article>
 
-  .s7-player-card strong{
-    font-size:17px
-  }
+      <b>04</b>
 
-  .balloon,
-  .season8-main-balloon{
-    width:155px;
-    height:195px;
-    right:8px
-  }
+      <h3>
+        FIRST TO 5
+      </h3>
 
-  .season8-balloon-content strong{
-    font-size:15px
-  }
+      <p>
+        먼저 5점을 얻은 선수가 승리.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- FOULS -->
+<section id="fouls" class="rules">
+
+  <label>
+    04 / FOUL & WARNING
+  </label>
+
+  <h2>
+    FOULS & WARNINGS
+  </h2>
+
+
+  <div class="fwgrid">
+
+
+    <div>
+
+      <h3>
+        🚨 파울 규칙
+      </h3>
+
+
+      <article>
+
+        <b>01</b>
+
+        <p>
+          신체부위 일부가 상대팀 영역으로 나갈 때.
+        </p>
+
+      </article>
+
+
+      <article>
+
+        <b>02</b>
+
+        <p>
+          서브 시, 풍선이 경기장 밖으로 나갈 때.
+        </p>
+
+      </article>
+
+
+      <article>
+
+        <b>03</b>
+
+        <p>
+          심판에게 항의하는 경우.
+        </p>
+
+      </article>
+
+    </div>
+
+
+    <div>
+
+      <h3>
+        📋 경고 규칙
+      </h3>
+
+
+      <article>
+
+        <b>01</b>
+
+        <p>
+          경기시간을 지연할 경우.
+        </p>
+
+      </article>
+
+
+      <article>
+
+        <b>02</b>
+
+        <p>
+          상대팀에게 도발할 경우.
+        </p>
+
+      </article>
+
+
+      <article>
+
+        <b>03</b>
+
+        <p>
+          서브를 이상하게 할 경우.
+          (서브 스파이크 등 여기에 해당)
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- HISTORY -->
+<section id="history" class="dark">
+
+  <label>
+    05 / SINCE 2026
+  </label>
+
+  <h2>
+    HISTORY
+  </h2>
+
+
+  <div class="timeline">
+
+
+    <p>
+      <b>2026.06</b>
+      비공식 경기 시작
+    </p>
+
+
+    <p>
+      <b>2026.09.08</b>
+      정식 창단
+    </p>
+
+
+    <p>
+      <b>SEASON 01</b>
+      시은 우승
+    </p>
+
+
+    <p>
+      <b>SEASON 02</b>
+      서빈 우승
+    </p>
+
 
-  #season8-countdown b{
-    font-size:14px
+    <p>
+      <b>SEASON 03</b>
+      시은 우승
+    </p>
+
+
+    <p>
+      <b>SEASON 04</b>
+      지호 우승
+    </p>
+
+
+    <p>
+      <b>SEASON 05</b>
+      지호 우승
+    </p>
+
+
+    <p>
+      <b>2026.09.12 ~ 2026.09.15</b>
+      임시 중단
+    </p>
+
+
+    <p>
+      <b>2026.09.15</b>
+      BALLOON LEAGUE 공식 로고 투표
+    </p>
+
+    <p>
+      <b>SEASON 06</b>
+      시은 우승
+    </p>
+
+
+    <p>
+      <b>SEASON 07</b>
+      준우 우승
+    </p>
+
+
+    <p>
+      <b>2026.09.20</b>
+      BALLOON LEAGUE 공식 홈페이지 개설
+    </p>
+
+
+    <p>
+      <b>SEASON 08</b>
+      지호 우승
+    </p>
+
+
+    <p>
+      <b>2026.09.21</b>
+      BALLOON LEAGUE 노래 제작
+    </p>
+
+
+    <p>
+      <b>SEASON 09</b>
+      준서 우승
+    </p>
+
+
+    <p>
+      <b>SEASON 10</b>
+      시은 우승
+    </p>
+     
+  </div>
+
+</section>
+
+
+<!-- WELCOME POPUP -->
+<div id="welcomePopup" class="welcome-popup">
+
+  <div class="welcome-overlay"></div>
+
+
+  <div class="welcome-box">
+
+    <button
+      class="welcome-close"
+      id="welcomeClose">
+      ×
+    </button>
+
+
+    <div class="welcome-balloon">
+      🎈
+    </div>
+
+
+    <div class="welcome-tag">
+      OFFICIAL WEBSITE
+    </div>
+
+
+    <h2>
+      BALLOON LEAGUE
+    </h2>
+
+
+    <h3>
+      풍선리그에 오신 것을 환영합니다!
+    </h3>
+
+
+    <p>
+      풍선리그 공식 홈페이지입니다.<br>
+      시즌 일정, 선수 기록, 경기 결과와<br>
+      최신 소식을 확인해보세요.
+    </p>
+
+
+    <button
+      class="welcome-start"
+      id="welcomeStart">
+
+      홈페이지 둘러보기
+
+      <span>→</span>
+
+    </button>
+
+
+    <label class="welcome-check">
+
+      <input
+        type="checkbox"
+        id="dontShowAgain">
+
+      다음부터 이 창을 보지 않기
+
+    </label>
+
+  </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+
+  © 2026 풍선리그 · BALLOON LEAGUE · OFFICIAL WEBSITE
+
+</footer>
+
+
+<script>
+
+/* =========================
+   SEASON 11 COUNTDOWN
+========================= */
+
+const season8Start =
+  new Date("2026-09-28T13:10:00+09:00").getTime();
+
+
+function updateSeason8Countdown() {
+
+  const countdown =
+    document.getElementById("season8-countdown");
+
+  if (!countdown) return;
+
+
+  const distance =
+    season8Start - Date.now();
+
+
+  if (distance <= 0) {
+
+    countdown.innerHTML =
+      "🎈 시즌 10 개막!";
+
+    return;
+
   }
+
+
+  const days =
+    Math.floor(distance / 86400000);
+
+
+  const hours =
+    Math.floor(
+      (distance % 86400000) / 3600000
+    );
+
+
+  const minutes =
+    Math.floor(
+      (distance % 3600000) / 60000
+    );
+
+
+  const seconds =
+    Math.floor(
+      (distance % 60000) / 1000
+    );
 
+
+  document.getElementById("days").textContent =
+    String(days).padStart(2, "0");
+
+
+  document.getElementById("hours").textContent =
+    String(hours).padStart(2, "0");
+
+
+  document.getElementById("minutes").textContent =
+    String(minutes).padStart(2, "0");
+
+
+  document.getElementById("seconds").textContent =
+    String(seconds).padStart(2, "0");
+
 }
+
+
+updateSeason8Countdown();
+
+setInterval(
+  updateSeason8Countdown,
+  1000
+);
 
 
 /* =========================
-   BALLOON LEAGUE
-   20 DAYS SPECIAL
+   INTRO
 ========================= */
 
-.twenty-days-special {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto 40px;
-  padding: 30px 20px;
-  box-sizing: border-box;
-  text-align: center;
-  background: #fff;
-  border-radius: 24px;
-  overflow: hidden;
+window.addEventListener('load', () => {
+
+  setTimeout(() => {
+
+    document.body.classList.add('loaded');
+
+  }, 800);
+
+});
+
+
+/* =========================
+   HAMBURGER MENU
+========================= */
+
+const menu =
+  document.getElementById('menu');
+
+const mobileMenu =
+  document.getElementById('mobileMenu');
+
+const menuClose =
+  document.getElementById('menuClose');
+
+
+menu.addEventListener('click', () => {
+
+  mobileMenu.classList.add('open');
+
+});
+
+
+menuClose.addEventListener('click', () => {
+
+  mobileMenu.classList.remove('open');
+
+});
+
+
+document
+  .querySelectorAll('.mobile-menu a')
+  .forEach(link => {
+
+    link.addEventListener('click', () => {
+
+      mobileMenu.classList.remove('open');
+
+    });
+
+  });
+
+
+/* =========================
+   WELCOME POPUP
+========================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+
+    const popup =
+      document.getElementById(
+        "welcomePopup"
+      );
+
+    const closeBtn =
+      document.getElementById(
+        "welcomeClose"
+      );
+
+    const startBtn =
+      document.getElementById(
+        "welcomeStart"
+      );
+
+    const checkbox =
+      document.getElementById(
+        "dontShowAgain"
+      );
+
+
+    if (
+      localStorage.getItem(
+        "balloonWelcomeClosed"
+      ) === "true"
+    ) {
+
+      popup.classList.add("hidden");
+
+    }
+
+
+    function closeWelcome() {
+
+      if (checkbox.checked) {
+
+        localStorage.setItem(
+          "balloonWelcomeClosed",
+          "true"
+        );
+
+      }
+
+
+      popup.classList.add("closing");
+
+
+      setTimeout(function () {
+
+        popup.classList.add("hidden");
+
+      }, 350);
+
+    }
+
+
+    closeBtn.addEventListener(
+      "click",
+      closeWelcome
+    );
+
+
+    startBtn.addEventListener(
+      "click",
+      closeWelcome
+    );
+
+
+    document
+      .querySelector(".welcome-overlay")
+      .addEventListener(
+        "click",
+        closeWelcome
+      );
+
+  });
+
+
+/* =========================
+   BALLOON LEAGUE INTRO MUSIC
+========================= */
+
+const balloonIntroMusic =
+  document.getElementById("balloonIntroMusic");
+
+const welcomeStartMusic =
+  document.getElementById("welcomeStart");
+
+if (balloonIntroMusic && welcomeStartMusic) {
+
+  welcomeStartMusic.addEventListener("click", () => {
+
+    balloonIntroMusic.currentTime = 0;
+
+    balloonIntroMusic.play().catch(() => {});
+
+  });
+
 }
 
-.twenty-days-special img {
-  display: block;
-  width: min(650px, 90%);
-  height: auto;
-  margin: 0 auto;
-}
+</script>
 
-.twenty-days-countdown {
-  margin-top: 15px;
-  font-size: 36px;
-  font-weight: 900;
-  letter-spacing: -1px;
-}
-
-.twenty-days-special p {
-  margin: 8px 0 0;
-  font-size: 14px;
-  font-weight: 600;
-  color: #777;
-}
+</body>
+</html>
