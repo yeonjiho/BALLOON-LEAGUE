@@ -4,14 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<meta name="description" content="풍선리그 선수 인터뷰 공개 예정">
+<meta name="description" content="BALLOON LEAGUE PLAYER INTERVIEW">
 <title>PLAYER INTERVIEW | BALLOON LEAGUE</title>
 
 <style>
 
 /* =========================
-   BALLOON LEAGUE
-   PLAYER INTERVIEW TEASER
+   BASIC
 ========================= */
 
 * {
@@ -24,12 +23,9 @@ html {
 
 body {
   margin: 0;
-  min-height: 100vh;
   background: #f3f3f1;
   color: #111;
   font-family: Arial, "Noto Sans KR", sans-serif;
-  display: flex;
-  flex-direction: column;
 }
 
 
@@ -38,20 +34,19 @@ body {
 ========================= */
 
 .header {
-  width: 100%;
   padding: 22px 6%;
+  border-bottom: 1px solid #ddd;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #ddd;
   background: #f3f3f1;
 }
 
 .logo {
-  color: #111;
   text-decoration: none;
-  font-weight: 900;
+  color: #111;
   font-size: 20px;
+  font-weight: 900;
   letter-spacing: -1px;
 }
 
@@ -60,175 +55,141 @@ body {
   margin-top: 3px;
   font-size: 9px;
   letter-spacing: 2px;
-  font-weight: 700;
 }
 
 .back {
-  color: #111;
   text-decoration: none;
-  font-size: 13px;
-  font-weight: 800;
+  color: #111;
   border: 1px solid #111;
-  padding: 10px 14px;
   border-radius: 999px;
-  transition: .2s ease;
-}
-
-.back:hover {
-  background: #111;
-  color: #fff;
+  padding: 9px 14px;
+  font-size: 12px;
+  font-weight: 800;
 }
 
 
 /* =========================
-   MAIN
+   HERO
 ========================= */
 
-.teaser {
-  flex: 1;
-  width: min(900px, 90%);
-  margin: 0 auto;
-  padding: 90px 20px 100px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero {
   text-align: center;
+  padding: 80px 20px 60px;
 }
 
-.teaser-box {
-  width: 100%;
-  max-width: 720px;
-  padding: 65px 35px;
+.hero-balloon {
+  font-size: 55px;
+  margin-bottom: 20px;
+}
 
+.hero-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  color: #777;
+}
+
+.hero h1 {
+  margin: 15px 0 10px;
+  font-size: clamp(45px, 9vw, 80px);
+  line-height: .9;
+  letter-spacing: -5px;
+  font-weight: 1000;
+}
+
+.hero h1 span {
+  display: block;
+}
+
+.hero p {
+  margin: 25px 0 0;
+  color: #666;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   INTERVIEW LIST
+========================= */
+
+.interviews {
+  width: min(900px, 92%);
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+
+/* =========================
+   PLAYER CARD
+========================= */
+
+.player-card {
   background: #fff;
   border: 1px solid #ddd;
-  border-radius: 28px;
-
-  box-shadow: 0 15px 40px rgba(0,0,0,.05);
+  border-radius: 24px;
+  padding: 35px;
+  margin-bottom: 28px;
+  box-shadow: 0 12px 35px rgba(0,0,0,.04);
 }
 
-
-/* =========================
-   BALLOON
-========================= */
-
-.balloon {
-  font-size: 58px;
-  margin-bottom: 25px;
-}
-
-
-/* =========================
-   LABEL
-========================= */
-
-.label {
-  display: inline-block;
-  margin-bottom: 18px;
-
+.player-number {
   font-size: 10px;
-  font-weight: 900;
   letter-spacing: 2px;
-  color: #777;
-}
-
-
-/* =========================
-   TITLE
-========================= */
-
-.teaser-box h1 {
-  margin: 0;
-
-  font-size: clamp(42px, 8vw, 72px);
-  line-height: .95;
-  font-weight: 1000;
-
-  letter-spacing: -4px;
-}
-
-.teaser-box h1 em {
-  display: block;
-  margin-top: 5px;
-
-  font-style: normal;
-}
-
-
-/* =========================
-   SUBTITLE
-========================= */
-
-.subtitle {
-  margin: 25px 0 0;
-
-  font-size: 17px;
-  font-weight: 700;
-  color: #444;
-}
-
-
-/* =========================
-   WAITING MESSAGE
-========================= */
-
-.waiting {
-  margin: 45px auto 0;
-  padding: 25px;
-
-  background: #f3f3f1;
-  border-radius: 18px;
-}
-
-.waiting small {
-  display: block;
-
-  margin-bottom: 10px;
-
-  font-size: 10px;
   font-weight: 900;
-  letter-spacing: 2px;
-  color: #888;
+  color: #999;
 }
 
-.waiting strong {
-  display: block;
-
-  font-size: 25px;
+.player-name {
+  margin: 7px 0 30px;
+  font-size: 32px;
   font-weight: 1000;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
 }
 
 
 /* =========================
-   DATE
+   QUESTION
 ========================= */
 
-.date {
-  margin-top: 28px;
-
-  font-size: 14px;
-  font-weight: 800;
-  color: #666;
+.question {
+  margin-top: 25px;
 }
 
-.date strong {
-  color: #111;
+.question:first-of-type {
+  margin-top: 0;
 }
 
-
-/* =========================
-   MESSAGE
-========================= */
-
-.message {
-  margin-top: 30px;
-
+.question-title {
+  margin-bottom: 9px;
   font-size: 13px;
-  line-height: 1.7;
+  font-weight: 900;
   color: #777;
-  font-weight: 600;
+}
+
+.answer {
+  padding: 14px 16px;
+  background: #f3f3f1;
+  border-radius: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.interview-end {
+  margin-top: 35px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #aaa;
+  font-weight: 900;
 }
 
 
@@ -237,13 +198,10 @@ body {
 ========================= */
 
 footer {
-  padding: 30px 20px;
-
-  text-align: center;
-
+  padding: 35px 20px;
   border-top: 1px solid #ddd;
-
-  color: #777;
+  text-align: center;
+  color: #888;
   font-size: 10px;
   font-weight: 700;
 }
@@ -268,36 +226,30 @@ footer {
     padding: 8px 11px;
   }
 
-  .teaser {
-    width: 94%;
-    padding: 55px 10px 70px;
+  .hero {
+    padding: 55px 15px 45px;
   }
 
-  .teaser-box {
-    padding: 50px 22px;
-    border-radius: 22px;
+  .hero h1 {
+    font-size: 52px;
+    letter-spacing: -4px;
   }
 
-  .balloon {
-    font-size: 48px;
+  .player-card {
+    padding: 25px 20px;
+    border-radius: 20px;
   }
 
-  .teaser-box h1 {
-    font-size: 48px;
-    letter-spacing: -3px;
+  .player-name {
+    font-size: 27px;
   }
 
-  .subtitle {
+  .question-title {
+    font-size: 12px;
+  }
+
+  .answer {
     font-size: 14px;
-  }
-
-  .waiting {
-    margin-top: 35px;
-    padding: 21px;
-  }
-
-  .waiting strong {
-    font-size: 21px;
   }
 
 }
@@ -315,12 +267,12 @@ footer {
 
 <header class="header">
 
-  <a class="logo" href="index.html">
+  <a href="index.html" class="logo">
     🎈 풍선리그
     <small>BALLOON LEAGUE</small>
   </a>
 
-  <a class="back" href="index.html">
+  <a href="index.html" class="back">
     ← HOME
   </a>
 
@@ -328,61 +280,572 @@ footer {
 
 
 <!-- =========================
-     TEASER
+     HERO
 ========================= -->
 
-<main class="teaser">
+<section class="hero">
 
-  <section class="teaser-box">
+  <div class="hero-balloon">🎈</div>
 
-    <div class="balloon">
-      🎈
+  <div class="hero-label">
+    BALLOON LEAGUE SPECIAL
+  </div>
+
+  <h1>
+    PLAYER
+    <span>INTERVIEW</span>
+  </h1>
+
+  <p>
+    풍선리그 선수들의 진짜 이야기
+  </p>
+
+</section>
+
+
+<!-- =========================
+     INTERVIEWS
+========================= -->
+
+<main class="interviews">
+
+
+<!-- =========================
+     PLAYER 01
+========================= -->
+
+<article class="player-card">
+
+  <div class="player-number">
+    PLAYER 01
+  </div>
+
+  <h2 class="player-name">
+    방준서
+  </h2>
+
+  <div class="question">
+    <div class="question-title">
+      풍선리그를 처음 시작했을 때 어떤 느낌이었나요?
     </div>
-
-    <span class="label">
-      BALLOON LEAGUE SPECIAL
-    </span>
-
-    <h1>
-      PLAYER
-      <em>INTERVIEW</em>
-    </h1>
-
-    <p class="subtitle">
-      BALLOON LEAGUE 선수들의 이야기
-    </p>
-
-
-    <!-- WAITING -->
-
-    <div class="waiting">
-
-      <small>
-        COMING SOON
-      </small>
-
-      <strong>
-        20일을 기다리는 중...
-      </strong>
-
+    <div class="answer">
+      재미따
     </div>
+  </div>
 
-
-    <!-- DATE -->
-
-    <div class="date">
-      공개일 · <strong>2026.09.27</strong>
+  <div class="question">
+    <div class="question-title">
+      지금까지 가장 기억에 남는 시즌은?
     </div>
+    <div class="answer">
+      SEASON 1
+    </div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">
+      가장 기억에 남는 경기는?
+    </div>
+    <div class="answer">
+      시즌 9
+    </div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">
+      가장 상대하기 어렵다고 생각하는 선수는?
+    </div>
+    <div class="answer">
+      안시은
+    </div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">
+      가장 재미있었던 순간은?
+    </div>
+    <div class="answer">
+      이겼을 때
+    </div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">
+      본인의 플레이 스타일을 한마디로 표현한다면?
+    </div>
+    <div class="answer">
+      아직은 ㅁㄹ
+    </div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">
+      풍선리그에서 꼭 이겨보고 싶은 선수는?
+    </div>
+    <div class="answer">
+      없음
+    </div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">
+      앞으로 이루고 싶은 목표나 기록은?
+    </div>
+    <div class="answer">
+      1등하기
+    </div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">
+      풍선리그에게 한마디!
+    </div>
+    <div class="answer">
+      재미따!
+    </div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">
+      풍선리그를 한 단어로 표현한다면?
+    </div>
+    <div class="answer">
+      풍 / 선 / 리 / 그
+    </div>
+  </div>
+
+  <div class="interview-end">
+    END OF INTERVIEW · 방준서
+  </div>
+
+</article>
 
 
-    <!-- MESSAGE -->
+<!-- =========================
+     PLAYER 02
+========================= -->
 
-    <p class="message">
-      선수들의 진짜 이야기가 곧 공개됩니다.<br>
-      하루 전, 다시 찾아와 주세요. 🎈
-    </p>
+<article class="player-card">
 
-  </section>
+  <div class="player-number">
+    PLAYER 02
+  </div>
+
+  <h2 class="player-name">
+    연지호
+  </h2>
+
+  <div class="question">
+    <div class="question-title">풍선리그를 처음 시작했을 때 어떤 느낌이었나요?</div>
+    <div class="answer">이거 재밌다</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">지금까지 가장 기억에 남는 시즌은?</div>
+    <div class="answer">SEASON 4</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 기억에 남는 경기는?</div>
+    <div class="answer">4시즌 결승전!</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 상대하기 어렵다고 생각하는 선수는?</div>
+    <div class="answer">시은선수</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 재미있었던 순간은?</div>
+    <div class="answer">9시즌 준결승진출결정전</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">본인의 플레이 스타일을 한마디로 표현한다면?</div>
+    <div class="answer">공격 수비 그 중간?</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그에서 꼭 이겨보고 싶은 선수는?</div>
+    <div class="answer">준서 선수</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">앞으로 이루고 싶은 목표나 기록은?</div>
+    <div class="answer">우승 5회 달성!</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그에게 한마디!</div>
+    <div class="answer">진짜 재밌어요</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그를 한 단어로 표현한다면?</div>
+    <div class="answer">점심시간의 심심함을 달래주는 것</div>
+  </div>
+
+  <div class="interview-end">
+    END OF INTERVIEW · 연지호
+  </div>
+
+</article>
+
+
+<!-- =========================
+     PLAYER 03
+========================= -->
+
+<article class="player-card">
+
+  <div class="player-number">
+    PLAYER 03
+  </div>
+
+  <h2 class="player-name">
+    김준우
+  </h2>
+
+  <div class="question">
+    <div class="question-title">풍선리그를 처음 시작했을 때 어떤 느낌이었나요?</div>
+    <div class="answer">재밌고 뭔가 계속 할것 같았다.</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">지금까지 가장 기억에 남는 시즌은?</div>
+    <div class="answer">SEASON 7</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 기억에 남는 경기는?</div>
+    <div class="answer">(season 7) 지호 vs 준우</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 상대하기 어렵다고 생각하는 선수는?</div>
+    <div class="answer">안시은</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 재미있었던 순간은?</div>
+    <div class="answer">1등했을때</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">본인의 플레이 스타일을 한마디로 표현한다면?</div>
+    <div class="answer">오는공은 죽인다</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그에서 꼭 이겨보고 싶은 선수는?</div>
+    <div class="answer">안시은</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">앞으로 이루고 싶은 목표나 기록은?</div>
+    <div class="answer">1등을 두번 더해서 별을 3개 가지고싶다</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그에게 한마디!</div>
+    <div class="answer">너무 재밌다</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그를 한 단어로 표현한다면?</div>
+    <div class="answer">재미</div>
+  </div>
+
+  <div class="interview-end">
+    END OF INTERVIEW · 김준우
+  </div>
+
+</article>
+
+
+<!-- =========================
+     PLAYER 04
+========================= -->
+
+<article class="player-card">
+
+  <div class="player-number">
+    PLAYER 04
+  </div>
+
+  <h2 class="player-name">
+    김혜영
+  </h2>
+
+  <div class="question">
+    <div class="question-title">풍선리그를 처음 시작했을 때 어떤 느낌이었나요?</div>
+    <div class="answer">재밌었음</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">지금까지 가장 기억에 남는 시즌은?</div>
+    <div class="answer">SEASON 9</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 기억에 남는 경기는?</div>
+    <div class="answer">시은이가 져준거(시은아 고마어)</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 상대하기 어렵다고 생각하는 선수는?</div>
+    <div class="answer">(연)지호,(안)시은</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 재미있었던 순간은?</div>
+    <div class="answer">오늘 마지막에 다같이 했던거(9.23.)</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">본인의 플레이 스타일을 한마디로 표현한다면?</div>
+    <div class="answer">몰루</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그에서 꼭 이겨보고 싶은 선수는?</div>
+    <div class="answer">(연)지호,(안)시은</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">앞으로 이루고 싶은 목표나 기록은?</div>
+    <div class="answer">이서한 이기기;;;</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그에게 한마디!</div>
+    <div class="answer">풍서? 풍선리그 영원하자!</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그를 한 단어로 표현한다면?</div>
+    <div class="answer">BL</div>
+  </div>
+
+  <div class="interview-end">
+    END OF INTERVIEW · 김혜영
+  </div>
+
+</article>
+
+
+<!-- =========================
+     PLAYER 05
+========================= -->
+
+<article class="player-card">
+
+  <div class="player-number">
+    PLAYER 05
+  </div>
+
+  <h2 class="player-name">
+    송서빈
+  </h2>
+
+  <div class="question">
+    <div class="question-title">풍선리그를 처음 시작했을 때 어떤 느낌이었나요?</div>
+    <div class="answer">새롭고 즐거운 느낌</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">지금까지 가장 기억에 남는 시즌은?</div>
+    <div class="answer">SEASON 2</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 기억에 남는 경기는?</div>
+    <div class="answer">-</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 상대하기 어렵다고 생각하는 선수는?</div>
+    <div class="answer">안시은, 연지호 😅</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 재미있었던 순간은?</div>
+    <div class="answer">이겼을 때</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">본인의 플레이 스타일을 한마디로 표현한다면?</div>
+    <div class="answer">정직하고 공격 스타일</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그에서 꼭 이겨보고 싶은 선수는?</div>
+    <div class="answer">연지호</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">앞으로 이루고 싶은 목표나 기록은?</div>
+    <div class="answer">결승 다시 가보는게 목표</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그에게 한마디!</div>
+    <div class="answer">풍선 리그 영원하라ㅏㅏㅏㅏ</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그를 한 단어로 표현한다면?</div>
+    <div class="answer">갓겜</div>
+  </div>
+
+  <div class="interview-end">
+    END OF INTERVIEW · 송서빈
+  </div>
+
+</article>
+
+
+<!-- =========================
+     PLAYER 06
+========================= -->
+
+<article class="player-card">
+
+  <div class="player-number">
+    PLAYER 06
+  </div>
+
+  <h2 class="player-name">
+    이정윤
+  </h2>
+
+  <div class="question">
+    <div class="question-title">풍선리그를 처음 시작했을 때 어떤 느낌이었나요?</div>
+    <div class="answer">엄...</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">지금까지 가장 기억에 남는 시즌은?</div>
+    <div class="answer">SEASON 10</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 기억에 남는 경기는?</div>
+    <div class="answer">친선전으로 한 팀전</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 상대하기 어렵다고 생각하는 선수는?</div>
+    <div class="answer">연지호</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 재미있었던 순간은?</div>
+    <div class="answer">연지호랑 뜰때</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">본인의 플레이 스타일을 한마디로 표현한다면?</div>
+    <div class="answer">엄...</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그에서 꼭 이겨보고 싶은 선수는?</div>
+    <div class="answer">연지호</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">앞으로 이루고 싶은 목표나 기록은?</div>
+    <div class="answer">엄...</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그에게 한마디!</div>
+    <div class="answer">엄.....</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그를 한 단어로 표현한다면?</div>
+    <div class="answer">예?</div>
+  </div>
+
+  <div class="interview-end">
+    END OF INTERVIEW · 이정윤
+  </div>
+
+</article>
+
+
+<!-- =========================
+     PLAYER 07
+========================= -->
+
+<article class="player-card">
+
+  <div class="player-number">
+    PLAYER 07
+  </div>
+
+  <h2 class="player-name">
+    안시은
+  </h2>
+
+  <div class="question">
+    <div class="question-title">풍선리그를 처음 시작했을 때 어떤 느낌이었나요?</div>
+    <div class="answer">재미로 시작</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">지금까지 가장 기억에 남는 시즌은?</div>
+    <div class="answer">SEASON 1</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 기억에 남는 경기는?</div>
+    <div class="answer">서한이가 역전한 경기</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 상대하기 어렵다고 생각하는 선수는?</div>
+    <div class="answer">공격적인 선수</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">가장 재미있었던 순간은?</div>
+    <div class="answer">역전</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">본인의 플레이 스타일을 한마디로 표현한다면?</div>
+    <div class="answer">흐름을 타는 플레이</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그에서 꼭 이겨보고 싶은 선수는?</div>
+    <div class="answer">딱히?</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">앞으로 이루고 싶은 목표나 기록은?</div>
+    <div class="answer">.</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그에게 한마디!</div>
+    <div class="answer">다른 버전도 하고 싶</div>
+  </div>
+
+  <div class="question">
+    <div class="question-title">풍선리그를 한 단어로 표현한다면?</div>
+    <div class="answer">재미</div>
+  </div>
+
+  <div class="interview-end">
+    END OF INTERVIEW · 안시은
+  </div>
+
+</article>
+
 
 </main>
 
