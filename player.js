@@ -2,7 +2,7 @@ const players = {
 
   "시은": {
     number: "PLAYER 01",
-    rank: "1위",
+    mean rank: "1위",
     wins: "4회",
     finals: "6회",
     seasons: "9",
@@ -12,7 +12,7 @@ const players = {
 
   "지호": {
     number: "PLAYER 02",
-    rank: "2위",
+    mean rank: "2위",
     wins: "3회",
     finals: "7회",
     seasons: "10",
