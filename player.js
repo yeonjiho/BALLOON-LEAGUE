@@ -5,19 +5,19 @@ const players = {
     avgRank: "2.9위",
     wins: "4회",
     finals: "6회",
-    seasons: "10",
+    seasons: "11",
     championship: "SEASON 1 · SEASON 3 · SEASON 6, SEASON 10",
-    participated: [1, 2, 3, 4, 5, 6, 8, 9, 10, 11]
+    participated: [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12]
   },
 
   "지호": {
     number: "PLAYER 02",
     avgRank: "2.6위",
-    wins: "3회",
-    finals: "7회",
-    seasons: "11",
-    championship: "SEASON 4 · SEASON 5 · SEASON 8",
-    participated: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    wins: "4회",
+    finals: "8회",
+    seasons: "12",
+    championship: "SEASON 4 · SEASON 5 · SEASON 8 · SEASON 12",
+    participated: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   },
 
   "서한": {
@@ -25,9 +25,9 @@ const players = {
     avgRank: "4.7위",
     wins: "0회",
     finals: "2회",
-    seasons: "10",
+    seasons: "11",
     championship: "없음",
-    participated: [1, 2, 3, 4, 5, 6, 8, 9, 10, 11]
+    participated: [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12]
   },
 
   "민준": {
@@ -35,9 +35,9 @@ const players = {
     avgRank: "5.5위",
     wins: "0회",
     finals: "1회",
-    seasons: "7",
+    seasons: "8",
     championship: "없음",
-    participated: [1, 2, 3, 5, 6, 7, 11]
+    participated: [1, 2, 3, 5, 6, 7, 11, 12]
   },
 
   "민성": {
@@ -45,9 +45,9 @@ const players = {
     avgRank: "6.5위",
     wins: "0회",
     finals: "0회",
-    seasons: "11",
+    seasons: "12",
     championship: "없음",
-    participated: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    participated: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   },
 
   "서빈": {
@@ -55,9 +55,9 @@ const players = {
     avgRank: "4.6위",
     wins: "1회",
     finals: "1회",
-    seasons: "8",
+    seasons: "9",
     championship: "SEASON 2",
-    participated: [2, 3, 4, 6, 7, 8, 9, 10, 11]
+    participated: [2, 3, 4, 6, 7, 8, 9, 10, 11, 12]
   },
 
   "시원": {
@@ -65,9 +65,9 @@ const players = {
     avgRank: "5.1위",
     wins: "0회",
     finals: "1회",
-    seasons: "8",
+    seasons: "9",
     championship: "없음",
-    participated: [2, 3, 4, 6, 7, 8, 9, 11]
+    participated: [2, 3, 4, 6, 7, 8, 9, 11, 12]
   },
 
   "준우": {
@@ -75,9 +75,9 @@ const players = {
     avgRank: "4.4위",
     wins: "2회",
     finals: "2회",
-    seasons: "9",
+    seasons: "10",
     championship: "SEASON 7 · SEASON 11",
-    participated: [2, 3, 4, 5, 6, 7, 8, 9, 11]
+    participated: [2, 3, 4, 5, 6, 7, 8, 9, 11, 12]
   },
 
    "혜영": {
@@ -85,9 +85,9 @@ const players = {
     avgRank: "7.3위",
     wins: "0회",
     finals: "0회",
-    seasons: "9",
+    seasons: "10",
     championship: "없음",
-    participated: [3, 4, 5, 6, 7, 8, 9, 10, 11]
+    participated: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   },
 
   "우성": {
@@ -105,19 +105,19 @@ const players = {
     avgRank: "2.3위",
     wins: "1회",
     finals: "2회",
-    seasons: "3",
+    seasons: "4",
     championship: "없음",
-    participated: [9, 10, 11]
+    participated: [9, 10, 11, 12]
   },
 
     "정윤": {
     number: "PLAYER 12",
     avgRank: "6.5위",
     wins: "0회",
-    finals: "0회",
-    seasons: "2",
+    finals: "1회",
+    seasons: "3",
     championship: "없음",
-    participated: [10, 11]
+    participated: [10, 11, 12]
   }
 
 };
